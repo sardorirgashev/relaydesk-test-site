@@ -1,0 +1,55 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Set up two-factor authentication · Relaydesk</title><meta name="description" content="Protect your Relaydesk account with an authenticator app or a hardware security key, save recovery codes and require 2FA for your whole workspace."><link rel="stylesheet" href="../assets/tokens.css"><link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml"></head><body><div class="announce">New in 2026.10: Relay AI Autopilot now answers customers on WhatsApp. <a href="../product/relay-ai.html">See how it works →</a></div><header class="nav"><div class="container nav__inner"><a class="logo" href="../index.html" aria-label="Relaydesk home"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="10" fill="currentColor"/><path d="M9 21.5c0-5 3.2-9 8-9h2.5M15.5 9l4 3.5-4 3.5" fill="none" stroke="#FFF9F3" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="22.5" cy="21.5" r="2.4" fill="#E26832"/></svg><span>Relaydesk</span></a><nav aria-label="Main"><ul class="nav__links"><li><a href="../product/index.html">Product</a></li><li><a href="../pricing.html">Pricing</a></li><li><a href="../integrations/index.html">Integrations</a></li><li><a href="../help/index.html" aria-current="page">Help center</a></li><li><a href="../faq.html">FAQ</a></li><li><a href="../blog/index.html">Blog</a></li></ul></nav><div class="nav__cta"><a class="btn btn--white" href="../contact.html">Talk to sales</a><a class="btn" href="../pricing.html#trial">Start free trial</a></div></div></header><main id="main"><div class="article-wrap"><aside class="toc"><p>On this page</p><ol><li><a href="#turn-on-2fa-with-an-authenticator-app">Turn on 2FA with an authenticator app</a></li><li><a href="#add-a-security-key">Add a security key</a></li><li><a href="#recovery-codes">Recovery codes</a></li><li><a href="#require-2fa-for-your-workspace">Require 2FA for your workspace</a></li><li><a href="#lost-or-replaced-device">Lost or replaced device</a></li><li><a href="#related-articles">Related articles</a></li></ol></aside><article><nav class="crumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a> <span aria-hidden="true">/</span> <a href="../help/index.html">Help center</a> <span aria-hidden="true">/</span> <a href="../help/index.html#account-security">Account &amp; security</a></nav><header class="article-head"><p class="t-eyebrow">Help center · Account &amp; security</p><h1 class="t-h1">Set up two-factor authentication</h1><p class="t-lead">Two-factor authentication (2FA) asks for a second proof of identity when you sign in, so a stolen password alone isn&#x27;t enough to get into your account.</p><p class="meta">Last updated August 27, 2026 · 3 min read</p></header><div class="prose">
+<p>Relaydesk supports two kinds of second factor. You can register both, and we recommend you do, so you always have a backup.</p>
+<ul>
+  <li><strong>Authenticator app (TOTP).</strong> An app such as Google Authenticator, Microsoft Authenticator or 1Password shows a 6-digit code that changes every 30 seconds.</li>
+  <li><strong>Security key (WebAuthn).</strong> A hardware key such as a YubiKey, or a built-in authenticator such as Touch ID or Windows Hello. You tap the key or use your fingerprint instead of typing a code, and it can't be phished.</li>
+</ul>
+
+<h2 id="turn-on-2fa-with-an-authenticator-app">Turn on 2FA with an authenticator app</h2>
+<ol class="steps">
+  <li>Click your avatar and choose <strong>Profile → Security</strong>.</li>
+  <li>Under <strong>Two-factor authentication</strong>, click <strong>Add authenticator app</strong>.</li>
+  <li>Scan the QR code with your app. If you can't scan it, enter the setup key shown below the code.</li>
+  <li>Type the 6-digit code from the app to confirm.</li>
+  <li>Save your recovery codes (see below), then click <strong>Done</strong>.</li>
+</ol>
+
+<h2 id="add-a-security-key">Add a security key</h2>
+<ol class="steps">
+  <li>Go to <strong>Profile → Security</strong> and click <strong>Add security key</strong>.</li>
+  <li>Give the key a name you'll recognize, such as "Blue YubiKey" or "MacBook Touch ID".</li>
+  <li>Follow your browser's prompt to insert and tap the key, or use your fingerprint or face.</li>
+</ol>
+<p>You can register more than one key. Keep a spare in a safe place in case you lose your main one.</p>
+
+<h2 id="recovery-codes">Recovery codes</h2>
+<p>When you turn on 2FA, Relaydesk gives you <strong>10 recovery codes</strong>. Each code can be used <strong>once</strong>, in place of an authenticator code or security key, if you lose access to your device.</p>
+<ul>
+  <li>Download or print the codes and store them somewhere safe, such as your password manager.</li>
+  <li>Each time you use a code, it stops working. Your remaining count is shown on <strong>Profile → Security</strong>.</li>
+  <li>Click <strong>Generate new codes</strong> to get a fresh set of 10. Your old codes stop working immediately.</li>
+</ul>
+<div class="callout callout--warn"><strong>Important:</strong> Relaydesk support can't read your recovery codes to you. If you lose them and your device, only a workspace Admin can reset your 2FA.</div>
+
+<h2 id="require-2fa-for-your-workspace">Require 2FA for your workspace</h2>
+<p>Admins can require two-factor authentication for everyone in the workspace.</p>
+<ol class="steps">
+  <li>Go to <strong>Settings → Security → Two-factor authentication</strong>.</li>
+  <li>Turn on <strong>Require 2FA for all members</strong>.</li>
+  <li>Optionally choose <strong>Security keys only</strong> if your policy doesn't allow authenticator apps.</li>
+</ol>
+<p>Members who haven't set up 2FA are asked to do so the next time they sign in, and they can't open any tickets until they have. New members set up 2FA as part of accepting their invitation. The <strong>Team</strong> page shows a 2FA column so you can see who has it turned on.</p>
+<p>If your workspace is on Scale and enforces SAML single sign-on, 2FA is handled by your identity provider instead, and the Relaydesk 2FA setting doesn't apply to SSO sign-ins.</p>
+
+<h2 id="lost-or-replaced-device">Lost or replaced device</h2>
+<p><strong>If you still have a backup:</strong> sign in with a recovery code or a registered security key. Then go to <strong>Profile → Security</strong>, remove the lost device and add your new one.</p>
+<p><strong>If you have no backup:</strong> ask a workspace Admin to go to <strong>Settings → Team</strong>, open your profile and click <strong>Reset 2FA</strong>. You'll be asked to set up 2FA again the next time you sign in. The reset is recorded in the audit log.</p>
+<p><strong>If you're the only Admin or the Owner and have no backup:</strong> email support@relaydesk.example from the address you use for Relaydesk. We'll verify your identity before resetting 2FA, which can take a few business days, so please keep your recovery codes safe.</p>
+
+<h2 id="related-articles">Related articles</h2>
+<ul>
+  <li><a href="../help/reset-password.html">Reset your password</a></li>
+  <li><a href="../help/invite-teammates.html">Invite teammates</a></li>
+  <li><a href="../security.html">Security at Relaydesk</a></li>
+</ul>
+</div><div class="card help-box"><div><p class="t-h4">Still need help?</p><p>Our support team replies within 4 hours on Growth and within 1 hour for urgent issues on Scale.</p></div><a class="btn btn--sm" href="../contact.html">Contact support</a></div></article></div></main><footer class="footer"><div class="container"><div class="footer__top"><p class="t-h1">Every conversation, <span class="accent">one calm inbox.</span></p><a class="btn btn--white" href="../pricing.html#trial">Start your 14-day free trial</a></div><div class="footer__cols"><div class="footer__about"><a class="logo" href="../index.html"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="10" fill="currentColor"/><path d="M9 21.5c0-5 3.2-9 8-9h2.5M15.5 9l4 3.5-4 3.5" fill="none" stroke="#FFF9F3" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="22.5" cy="21.5" r="2.4" fill="#E26832"/></svg><span>Relaydesk</span></a><p>Relaydesk, Inc. · 418 Alder Street, Suite 300, Portland, OR 97204, USA</p><p>EU office: Rua do Ouro 120, 1100-063 Lisbon, Portugal</p><p>Sales: +1 (503) 555-0142 · support@relaydesk.example</p></div><div><h2>Product</h2><ul><li><a href="../product/index.html">Platform overview</a></li><li><a href="../product/shared-inbox.html">Shared Inbox</a></li><li><a href="../product/live-chat.html">Live Chat</a></li><li><a href="../product/knowledge-base.html">Knowledge Base</a></li><li><a href="../product/relay-ai.html">Relay AI</a></li><li><a href="../pricing.html">Pricing</a></li></ul></div><div><h2>Integrations</h2><ul><li><a href="../integrations/index.html">All integrations</a></li><li><a href="../integrations/shopify.html">Shopify</a></li><li><a href="../integrations/slack.html">Slack</a></li><li><a href="../integrations/salesforce.html">Salesforce</a></li></ul></div><div><h2>Resources</h2><ul><li><a href="../help/index.html">Help center</a></li><li><a href="../help/getting-started.html">Getting started</a></li><li><a href="../help/admin-guide.html">Admin guide</a></li><li><a href="../faq.html">FAQ</a></li><li><a href="../blog/index.html">Blog</a></li></ul></div><div><h2>Company</h2><ul><li><a href="../about.html">About</a></li><li><a href="../contact.html">Contact</a></li><li><a href="../security.html">Security</a></li></ul></div><div><h2>Legal</h2><ul><li><a href="../legal/terms.html">Terms of Service</a></li><li><a href="../legal/privacy.html">Privacy Policy</a></li><li><a href="../legal/sla.html">Uptime SLA</a></li><li><a href="../legal/refund-policy.html">Refund Policy</a></li></ul></div></div><div class="footer__legal"><span>© 2026 Relaydesk, Inc. All rights reserved.</span><span>Relaydesk is a fictional company. This site is a test fixture for content-ingestion systems.</span></div></div></footer><div class="cookie" id="cookie" role="region" aria-label="Cookie notice"><p>We use essential cookies to keep you signed in and remember your preferences. We do not use advertising cookies. Read our <a href="../legal/privacy.html">Privacy Policy</a>.</p><button class="btn btn--filled" type="button" id="cookie-ok">Got it</button></div><script>(function(){var c=document.getElementById("cookie");try{if(localStorage.getItem("rd-cookie"))c.hidden=true;}catch(e){}document.getElementById("cookie-ok").onclick=function(){c.hidden=true;try{localStorage.setItem("rd-cookie","1");}catch(e){}};})();</script></body></html>

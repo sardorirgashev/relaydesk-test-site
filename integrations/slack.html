@@ -1,0 +1,131 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Slack integration: ticket notifications, thread replies and the /relay command · Relaydesk</title><meta name="description" content="The Relaydesk Slack integration posts new-ticket notifications to channels, lets you reply to tickets from Slack threads and create tickets with /relay. All plans."><link rel="stylesheet" href="../assets/tokens.css"><link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml"></head><body><div class="announce">New in 2026.10: Relay AI Autopilot now answers customers on WhatsApp. <a href="../product/relay-ai.html">See how it works →</a></div><header class="nav"><div class="container nav__inner"><a class="logo" href="../index.html" aria-label="Relaydesk home"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="10" fill="currentColor"/><path d="M9 21.5c0-5 3.2-9 8-9h2.5M15.5 9l4 3.5-4 3.5" fill="none" stroke="#FFF9F3" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="22.5" cy="21.5" r="2.4" fill="#E26832"/></svg><span>Relaydesk</span></a><nav aria-label="Main"><ul class="nav__links"><li><a href="../product/index.html">Product</a></li><li><a href="../pricing.html">Pricing</a></li><li><a href="../integrations/index.html" aria-current="page">Integrations</a></li><li><a href="../help/index.html">Help center</a></li><li><a href="../faq.html">FAQ</a></li><li><a href="../blog/index.html">Blog</a></li></ul></nav><div class="nav__cta"><a class="btn btn--white" href="../contact.html">Talk to sales</a><a class="btn" href="../pricing.html#trial">Start free trial</a></div></div></header><main id="main">
+<section class="band">
+  <div class="container">
+    <div class="hero">
+      <div class="hero__copy">
+        <p class="t-eyebrow">Integrations · Slack</p>
+        <h1 class="t-d2">Support conversations, right where your team <span class="accent">talks</span>.</h1>
+        <p class="t-lead">The Relaydesk Slack integration posts new tickets to the channels you choose, lets you reply from Slack threads, and turns any request into a ticket with <code>/relay</code>.</p>
+        <div class="actions"><a class="btn" href="../pricing.html">Start free trial</a><a class="btn btn--white" href="../integrations/index.html">All integrations</a></div>
+      </div>
+      <div class="hero__art"><svg viewBox="0 0 480 360" role="img" aria-hidden="true"><rect width="480" height="360" fill="#F4E9DD"/><circle cx="400" cy="70" r="110" fill="#55191C" opacity=".16"/><circle cx="60" cy="330" r="90" fill="#55191C" opacity=".08"/><rect x="36" y="36" width="408" height="288" rx="20" fill="#FFF9F3" stroke="#DEC9AD"/><circle cx="60" cy="58" r="5" fill="#DEC9AD"/><circle cx="76" cy="58" r="5" fill="#DEC9AD"/><circle cx="92" cy="58" r="5" fill="#DEC9AD"/><circle cx="240" cy="190" r="38" fill="#00060C"/><circle cx="240" cy="190" r="12" fill="#E26832"/><line x1="240" y1="190" x2="110" y2="110" stroke="#DEC9AD" stroke-width="3"/><rect x="82" y="82" width="56" height="56" rx="16" fill="#C65332"/><line x1="240" y1="190" x2="370" y2="110" stroke="#DEC9AD" stroke-width="3"/><rect x="342" y="82" width="56" height="56" rx="16" fill="#2A7A8C"/><line x1="240" y1="190" x2="110" y2="270" stroke="#DEC9AD" stroke-width="3"/><rect x="82" y="242" width="56" height="56" rx="16" fill="#F39A45"/><line x1="240" y1="190" x2="370" y2="270" stroke="#DEC9AD" stroke-width="3"/><rect x="342" y="242" width="56" height="56" rx="16" fill="#00A63E"/><line x1="240" y1="190" x2="240" y2="92" stroke="#DEC9AD" stroke-width="3"/><rect x="212" y="64" width="56" height="56" rx="16" fill="#55191C"/></svg></div>
+    </div>
+  </div>
+</section>
+
+<section class="band band--bone">
+  <div class="container">
+    <div class="section-head">
+      <p class="t-eyebrow">What it does</p>
+      <h2 class="t-h1">Three ways Slack and Relaydesk work together.</h2>
+    </div>
+    <div class="grid grid--3">
+      <div class="card feature"><span class="badge"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M10.268 21a2 2 0 0 0 3.464 0" /><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326" /></svg></span><h3 class="t-h4">New-ticket notifications</h3><p>Post a message to a Slack channel whenever a new ticket arrives, so the right people see urgent requests quickly.</p></div>
+      <div class="card feature"><span class="badge"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z" /><path d="M7 11h10" /><path d="M7 15h6" /><path d="M7 7h8" /></svg></span><h3 class="t-h4">Reply from threads</h3><p>Reply to a ticket from the notification's Slack thread. The reply is added to the ticket in Relaydesk.</p></div>
+      <div class="card feature"><span class="badge"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z" /><path d="m21.854 2.147-10.94 10.939" /></svg></span><h3 class="t-h4">The /relay command</h3><p>Type <code>/relay</code> in Slack to create a ticket, for example when a colleague passes on a customer request in chat.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="container">
+    <div class="section-head">
+      <p class="t-eyebrow">Plan availability</p>
+      <h2 class="t-h2">Available on every plan.</h2>
+      <p class="t-lead">The Slack integration is included on Starter, Growth and Scale at no extra cost. <a href="../pricing.html">Compare plans</a>.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band band--bone">
+  <div class="container">
+    <div class="split">
+      <div>
+        <h2 class="t-h2">Who it is for</h2>
+        <p>The Slack integration helps teams where not everyone works in the helpdesk all day. Operations, engineering or account managers can watch a channel for new tickets, jump into a thread when they know the answer, and log a customer request with <code>/relay</code> the moment they hear about it.</p>
+      </div>
+      <div>
+        <h2 class="t-h2">Pairs well with light seats</h2>
+        <p>Light (collaborator) seats are free on all plans and can view tickets and add internal notes, so colleagues who follow tickets in Slack can also add context inside Relaydesk. Starter allows up to 50 light seats.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band band--oxblood">
+  <div class="container">
+    <div class="section-head">
+      <p class="t-eyebrow">Setup</p>
+      <h2 class="t-h1">Set up in a few minutes.</h2>
+    </div>
+    <ol class="steps steps--row">
+      <li><h3 class="t-h4">Open integrations</h3><p>In Relaydesk, go to Settings, then Integrations, and choose Slack.</p></li>
+      <li><h3 class="t-h4">Authorize Slack</h3><p>Sign in to your Slack workspace and approve the app's permissions.</p></li>
+      <li><h3 class="t-h4">Pick channels</h3><p>Choose which Slack channels receive new-ticket notifications.</p></li>
+      <li><h3 class="t-h4">Try it out</h3><p>Reply in a notification thread, or type <code>/relay</code> to create a ticket.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="band">
+  <div class="container">
+    <div class="section-head">
+      <p class="t-eyebrow">What syncs</p>
+      <h2 class="t-h1">What moves between Slack and Relaydesk.</h2>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Item</th><th>Direction</th><th>Details</th></tr></thead>
+        <tbody>
+          <tr><td>New-ticket notification</td><td>Relaydesk to Slack</td><td>Posted to the channels you choose</td></tr>
+          <tr><td>Thread reply</td><td>Slack to Relaydesk</td><td>Added to the ticket as a reply</td></tr>
+          <tr><td>/relay slash command</td><td>Slack to Relaydesk</td><td>Creates a new ticket</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="band band--bone">
+  <div class="container">
+    <div class="split">
+      <div>
+        <h2 class="t-h2">Limitations</h2>
+        <ul class="checklist">
+          <li>Notifications are sent for new tickets. For other events, use one of your workspace's 20 webhooks.</li>
+          <li>Only full agent seats can reply to customers; light (collaborator) seats can view tickets and add internal notes but cannot reply.</li>
+          <li>The 25 MB per-file attachment limit applies to all tickets.</li>
+        </ul>
+      </div>
+      <div>
+        <figure class="card quote">
+          <blockquote>“Our warehouse team lives in Slack. Now they see new tickets in their channel and create one with /relay when a driver reports a problem, without ever logging in to another tool.”</blockquote>
+          <figcaption><strong>Priscilla Moreno</strong> · Operations Director, Northgate Supply Co.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="container">
+    <div class="section-head">
+      <p class="t-eyebrow">FAQ</p>
+      <h2 class="t-h1">Slack integration questions</h2>
+    </div>
+    <div class="faq-list">
+      <details><summary>Is the Slack integration included on Starter?</summary><p>Yes. Slack is available on all plans: Starter, Growth and Scale.</p></details>
+      <details><summary>Can I reply to customers from Slack?</summary><p>Yes. Reply in the Slack thread of a new-ticket notification and the reply is added to the ticket in Relaydesk.</p></details>
+      <details><summary>How do I turn a Slack message into a ticket?</summary><p>Use the <code>/relay</code> slash command to create a new Relaydesk ticket from Slack.</p></details>
+      <details><summary>Can I get Slack alerts for events other than new tickets?</summary><p>The Slack integration notifies on new tickets. For other events, use webhooks (up to 20 per workspace) or Zapier, which is available on all plans.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="band band--ink">
+  <div class="container cta">
+    <h2 class="t-h1">Connect Slack on any plan.</h2>
+    <a class="btn btn--white" href="../pricing.html">Start your 14-day free trial</a>
+  </div>
+</section>
+</main><footer class="footer"><div class="container"><div class="footer__top"><p class="t-h1">Every conversation, <span class="accent">one calm inbox.</span></p><a class="btn btn--white" href="../pricing.html#trial">Start your 14-day free trial</a></div><div class="footer__cols"><div class="footer__about"><a class="logo" href="../index.html"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="10" fill="currentColor"/><path d="M9 21.5c0-5 3.2-9 8-9h2.5M15.5 9l4 3.5-4 3.5" fill="none" stroke="#FFF9F3" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="22.5" cy="21.5" r="2.4" fill="#E26832"/></svg><span>Relaydesk</span></a><p>Relaydesk, Inc. · 418 Alder Street, Suite 300, Portland, OR 97204, USA</p><p>EU office: Rua do Ouro 120, 1100-063 Lisbon, Portugal</p><p>Sales: +1 (503) 555-0142 · support@relaydesk.example</p></div><div><h2>Product</h2><ul><li><a href="../product/index.html">Platform overview</a></li><li><a href="../product/shared-inbox.html">Shared Inbox</a></li><li><a href="../product/live-chat.html">Live Chat</a></li><li><a href="../product/knowledge-base.html">Knowledge Base</a></li><li><a href="../product/relay-ai.html">Relay AI</a></li><li><a href="../pricing.html">Pricing</a></li></ul></div><div><h2>Integrations</h2><ul><li><a href="../integrations/index.html">All integrations</a></li><li><a href="../integrations/shopify.html">Shopify</a></li><li><a href="../integrations/slack.html">Slack</a></li><li><a href="../integrations/salesforce.html">Salesforce</a></li></ul></div><div><h2>Resources</h2><ul><li><a href="../help/index.html">Help center</a></li><li><a href="../help/getting-started.html">Getting started</a></li><li><a href="../help/admin-guide.html">Admin guide</a></li><li><a href="../faq.html">FAQ</a></li><li><a href="../blog/index.html">Blog</a></li></ul></div><div><h2>Company</h2><ul><li><a href="../about.html">About</a></li><li><a href="../contact.html">Contact</a></li><li><a href="../security.html">Security</a></li></ul></div><div><h2>Legal</h2><ul><li><a href="../legal/terms.html">Terms of Service</a></li><li><a href="../legal/privacy.html">Privacy Policy</a></li><li><a href="../legal/sla.html">Uptime SLA</a></li><li><a href="../legal/refund-policy.html">Refund Policy</a></li></ul></div></div><div class="footer__legal"><span>© 2026 Relaydesk, Inc. All rights reserved.</span><span>Relaydesk is a fictional company. This site is a test fixture for content-ingestion systems.</span></div></div></footer><div class="cookie" id="cookie" role="region" aria-label="Cookie notice"><p>We use essential cookies to keep you signed in and remember your preferences. We do not use advertising cookies. Read our <a href="../legal/privacy.html">Privacy Policy</a>.</p><button class="btn btn--filled" type="button" id="cookie-ok">Got it</button></div><script>(function(){var c=document.getElementById("cookie");try{if(localStorage.getItem("rd-cookie"))c.hidden=true;}catch(e){}document.getElementById("cookie-ok").onclick=function(){c.hidden=true;try{localStorage.setItem("rd-cookie","1");}catch(e){}};})();</script></body></html>

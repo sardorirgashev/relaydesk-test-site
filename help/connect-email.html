@@ -1,0 +1,74 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Connect your support email · Relaydesk</title><meta name="description" content="Forward your support mailbox to Relaydesk from Gmail, Google Workspace or Microsoft 365, and send replies from your own domain with SPF, DKIM and DMARC."><link rel="stylesheet" href="../assets/tokens.css"><link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml"></head><body><div class="announce">New in 2026.10: Relay AI Autopilot now answers customers on WhatsApp. <a href="../product/relay-ai.html">See how it works →</a></div><header class="nav"><div class="container nav__inner"><a class="logo" href="../index.html" aria-label="Relaydesk home"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="10" fill="currentColor"/><path d="M9 21.5c0-5 3.2-9 8-9h2.5M15.5 9l4 3.5-4 3.5" fill="none" stroke="#FFF9F3" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="22.5" cy="21.5" r="2.4" fill="#E26832"/></svg><span>Relaydesk</span></a><nav aria-label="Main"><ul class="nav__links"><li><a href="../product/index.html">Product</a></li><li><a href="../pricing.html">Pricing</a></li><li><a href="../integrations/index.html">Integrations</a></li><li><a href="../help/index.html" aria-current="page">Help center</a></li><li><a href="../faq.html">FAQ</a></li><li><a href="../blog/index.html">Blog</a></li></ul></nav><div class="nav__cta"><a class="btn btn--white" href="../contact.html">Talk to sales</a><a class="btn" href="../pricing.html#trial">Start free trial</a></div></div></header><main id="main"><div class="article-wrap"><aside class="toc"><p>On this page</p><ol><li><a href="#find-your-forwarding-address">Find your forwarding address</a></li><li><a href="#forward-from-gmail-or-google-workspace">Forward from Gmail or Google Workspace</a></li><li><a href="#forward-from-microsoft-365">Forward from Microsoft 365</a></li><li><a href="#send-from-your-own-domain">Send from your own domain</a></li><li><a href="#verify-the-connection">Verify the connection</a></li><li><a href="#attachments">Attachments</a></li><li><a href="#troubleshooting">Troubleshooting</a></li><li><a href="#related-articles">Related articles</a></li></ol></aside><article><nav class="crumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a> <span aria-hidden="true">/</span> <a href="../help/index.html">Help center</a> <span aria-hidden="true">/</span> <a href="../help/index.html#channels">Channels</a></nav><header class="article-head"><p class="t-eyebrow">Help center · Channels</p><h1 class="t-h1">Connect your support email</h1><p class="t-lead">Forward your existing support address to Relaydesk and every email becomes a ticket in the Shared Inbox. Add two DNS records and your replies go out from your own domain.</p><p class="meta">Last updated May 19, 2026 · 4 min read</p></header><div class="prose">
+<p>Connecting email takes two parts. <strong>Receiving</strong>: you forward mail from your support mailbox to Relaydesk. <strong>Sending</strong>: you add DNS records so Relaydesk can send replies as your domain. You can do the first part in five minutes and the second whenever your DNS admin is available, but don't reply to customers from Relaydesk until sending is verified, or replies may land in spam.</p>
+<p>Each support address you connect counts as one email inbox. Starter includes 2 inboxes, Growth 10 and Scale unlimited.</p>
+
+<h2 id="find-your-forwarding-address">Find your forwarding address</h2>
+<p>Go to <strong>Settings → Channels → Email</strong> and click <strong>Add inbox</strong>. Enter the address your customers write to, for example <code>support@northwind.example</code>. Relaydesk shows your forwarding address, which always has this form:</p>
+<p><code>support-&lt;workspace&gt;@inbound.relaydesk.example</code></p>
+<p>For a workspace with the handle <code>northwind</code>, that's <code>support-northwind@inbound.relaydesk.example</code>. Copy it; you'll paste it into your mail provider next.</p>
+
+<h2 id="forward-from-gmail-or-google-workspace">Forward from Gmail or Google Workspace</h2>
+<ol class="steps">
+  <li>Sign in to the support mailbox in Gmail and open <strong>Settings → See all settings → Forwarding and POP/IMAP</strong>.</li>
+  <li>Click <strong>Add a forwarding address</strong> and paste your Relaydesk forwarding address.</li>
+  <li>Gmail sends a confirmation email to that address. It appears in Relaydesk as a ticket from Gmail Team within a minute. Open it and click the confirmation link, or copy the code into Gmail.</li>
+  <li>Back in Gmail, choose <strong>Forward a copy of incoming mail to</strong> your Relaydesk address and pick <strong>keep Gmail's copy in the Inbox</strong> or <strong>archive Gmail's copy</strong>.</li>
+  <li>Click <strong>Save changes</strong>.</li>
+</ol>
+<div class="callout"><strong>Google Workspace admins:</strong> if the forwarding option is greyed out, automatic forwarding is disabled for your organization. Turn it on in the Google Admin console under <strong>Apps → Google Workspace → Gmail → End user access → Automatic forwarding</strong>.</div>
+
+<h2 id="forward-from-microsoft-365">Forward from Microsoft 365</h2>
+<ol class="steps">
+  <li>In Outlook on the web, open the support mailbox and go to <strong>Settings → Mail → Forwarding</strong>.</li>
+  <li>Turn on <strong>Enable forwarding</strong> and paste your Relaydesk forwarding address.</li>
+  <li>Select <strong>Keep a copy of forwarded messages</strong> if you want mail to stay in Outlook too.</li>
+  <li>Click <strong>Save</strong>.</li>
+</ol>
+<p>For a shared mailbox, an Exchange admin can set forwarding instead in the Microsoft 365 admin center: open the mailbox under <strong>Teams &amp; groups → Shared mailboxes</strong>, choose <strong>Email forwarding</strong> and enter the Relaydesk address.</p>
+<div class="callout callout--warn"><strong>Forwarding blocked?</strong> Microsoft 365 blocks automatic external forwarding by default. If test emails never reach Relaydesk, ask your admin to allow automatic forwarding for the support mailbox in the outbound spam filter policy in Microsoft Defender.</div>
+
+<h2 id="send-from-your-own-domain">Send from your own domain</h2>
+<p>To send replies as <code>support@northwind.example</code>, Relaydesk needs permission to send mail for your domain. You grant it with SPF and DKIM DNS records. <strong>DMARC</strong> is not required, but we strongly recommend it, because many mailbox providers now treat mail without DMARC as suspicious.</p>
+<p>Relaydesk shows the exact records for your domain under <strong>Settings → Channels → Email → your inbox → Sending domain</strong>. They look like this:</p>
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr><th>Purpose</th><th>Type</th><th>Host / name</th><th>Value</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>SPF</td><td>TXT</td><td><code>northwind.example</code></td><td><code>v=spf1 include:spf.relaydesk.example ~all</code></td></tr>
+    <tr><td>DKIM (key 1)</td><td>CNAME</td><td><code>rd1._domainkey.northwind.example</code></td><td><code>rd1.dkim.relaydesk.example</code></td></tr>
+    <tr><td>DKIM (key 2)</td><td>CNAME</td><td><code>rd2._domainkey.northwind.example</code></td><td><code>rd2.dkim.relaydesk.example</code></td></tr>
+    <tr><td>DMARC (recommended)</td><td>TXT</td><td><code>_dmarc.northwind.example</code></td><td><code>v=DMARC1; p=none; rua=mailto:dmarc-reports@northwind.example</code></td></tr>
+  </tbody>
+</table>
+</div>
+<ul>
+  <li><strong>Already have an SPF record?</strong> Don't add a second one. A domain can have only one SPF record, so add <code>include:spf.relaydesk.example</code> to your existing record, before the <code>~all</code> or <code>-all</code>.</li>
+  <li><strong>DMARC policy.</strong> Start with <code>p=none</code> to collect reports without affecting delivery. Once reports show your mail passing, move to <code>p=quarantine</code> or <code>p=reject</code>.</li>
+</ul>
+
+<h2 id="verify-the-connection">Verify the connection</h2>
+<ol class="steps">
+  <li>After adding the records, click <strong>Verify DNS</strong> on the Sending domain page. Each record shows a green check when it's found. DNS changes can take up to 48 hours to spread, though most appear within an hour.</li>
+  <li>Click <strong>Send test email</strong>. Relaydesk sends a message to your support address, which is forwarded back and appears as a ticket. That proves receiving works.</li>
+  <li>Reply to the test ticket and check the reply in a personal mailbox. It should come from your support address with no "via" or "on behalf of" label.</li>
+</ol>
+
+<h2 id="attachments">Attachments</h2>
+<p>Attachments can be up to <strong>25 MB per file</strong>, both for incoming email and for replies your agents send. If a customer sends a larger file, the ticket is still created, but the oversized attachment is left out and an internal note tells the agent so they can ask for a link instead.</p>
+
+<h2 id="troubleshooting">Troubleshooting</h2>
+<details><summary>Emails aren't turning into tickets</summary><p>Send a message from a personal account to your support address. If it doesn't arrive in Relaydesk within a few minutes, forwarding isn't active. Check the provider steps above, including the Google Workspace and Microsoft 365 admin settings that block forwarding.</p></details>
+<details><summary>Replies go to spam</summary><p>Check that SPF and DKIM both show as verified. If you have more than one SPF record, merge them into one. Add a DMARC record if you don't have one.</p></details>
+<details><summary>Tickets are created twice</summary><p>You probably have forwarding set up twice, for example a mailbox rule and a mailbox-level forward. Remove one.</p></details>
+<details><summary>Auto-replies are creating loops</summary><p>Relaydesk ignores messages marked as automatic replies, but some systems don't mark them. Add a trigger that closes tickets from the looping address without replying, and turn off your mail provider's own auto-reply on the support mailbox; Relaydesk sends its own acknowledgment.</p></details>
+<details><summary>Verify DNS still fails after 48 hours</summary><p>Check for typos and make sure your DNS host didn't append your domain twice, for example <code>rd1._domainkey.northwind.example.northwind.example</code>. If it still fails, email support@relaydesk.example with a screenshot of your DNS records.</p></details>
+
+<h2 id="related-articles">Related articles</h2>
+<ul>
+  <li><a href="../help/install-chat-widget.html">Install the chat widget</a></li>
+  <li><a href="../help/macros.html">Create and use macros</a></li>
+  <li><a href="../product/shared-inbox.html">Shared Inbox overview</a></li>
+</ul>
+</div><div class="card help-box"><div><p class="t-h4">Still need help?</p><p>Our support team replies within 4 hours on Growth and within 1 hour for urgent issues on Scale.</p></div><a class="btn btn--sm" href="../contact.html">Contact support</a></div></article></div></main><footer class="footer"><div class="container"><div class="footer__top"><p class="t-h1">Every conversation, <span class="accent">one calm inbox.</span></p><a class="btn btn--white" href="../pricing.html#trial">Start your 14-day free trial</a></div><div class="footer__cols"><div class="footer__about"><a class="logo" href="../index.html"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="10" fill="currentColor"/><path d="M9 21.5c0-5 3.2-9 8-9h2.5M15.5 9l4 3.5-4 3.5" fill="none" stroke="#FFF9F3" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="22.5" cy="21.5" r="2.4" fill="#E26832"/></svg><span>Relaydesk</span></a><p>Relaydesk, Inc. · 418 Alder Street, Suite 300, Portland, OR 97204, USA</p><p>EU office: Rua do Ouro 120, 1100-063 Lisbon, Portugal</p><p>Sales: +1 (503) 555-0142 · support@relaydesk.example</p></div><div><h2>Product</h2><ul><li><a href="../product/index.html">Platform overview</a></li><li><a href="../product/shared-inbox.html">Shared Inbox</a></li><li><a href="../product/live-chat.html">Live Chat</a></li><li><a href="../product/knowledge-base.html">Knowledge Base</a></li><li><a href="../product/relay-ai.html">Relay AI</a></li><li><a href="../pricing.html">Pricing</a></li></ul></div><div><h2>Integrations</h2><ul><li><a href="../integrations/index.html">All integrations</a></li><li><a href="../integrations/shopify.html">Shopify</a></li><li><a href="../integrations/slack.html">Slack</a></li><li><a href="../integrations/salesforce.html">Salesforce</a></li></ul></div><div><h2>Resources</h2><ul><li><a href="../help/index.html">Help center</a></li><li><a href="../help/getting-started.html">Getting started</a></li><li><a href="../help/admin-guide.html">Admin guide</a></li><li><a href="../faq.html">FAQ</a></li><li><a href="../blog/index.html">Blog</a></li></ul></div><div><h2>Company</h2><ul><li><a href="../about.html">About</a></li><li><a href="../contact.html">Contact</a></li><li><a href="../security.html">Security</a></li></ul></div><div><h2>Legal</h2><ul><li><a href="../legal/terms.html">Terms of Service</a></li><li><a href="../legal/privacy.html">Privacy Policy</a></li><li><a href="../legal/sla.html">Uptime SLA</a></li><li><a href="../legal/refund-policy.html">Refund Policy</a></li></ul></div></div><div class="footer__legal"><span>© 2026 Relaydesk, Inc. All rights reserved.</span><span>Relaydesk is a fictional company. This site is a test fixture for content-ingestion systems.</span></div></div></footer><div class="cookie" id="cookie" role="region" aria-label="Cookie notice"><p>We use essential cookies to keep you signed in and remember your preferences. We do not use advertising cookies. Read our <a href="../legal/privacy.html">Privacy Policy</a>.</p><button class="btn btn--filled" type="button" id="cookie-ok">Got it</button></div><script>(function(){var c=document.getElementById("cookie");try{if(localStorage.getItem("rd-cookie"))c.hidden=true;}catch(e){}document.getElementById("cookie-ok").onclick=function(){c.hidden=true;try{localStorage.setItem("rd-cookie","1");}catch(e){}};})();</script></body></html>

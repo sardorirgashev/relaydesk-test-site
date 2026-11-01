@@ -1,0 +1,65 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Uptime SLA · Relaydesk</title><meta name="description" content="Relaydesk&#x27;s uptime commitment for Growth (99.9%) and Scale (99.95%) plans, service credits, exclusions and how to claim."><link rel="stylesheet" href="../assets/tokens.css"><link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml"></head><body><div class="announce">New in 2026.10: Relay AI Autopilot now answers customers on WhatsApp. <a href="../product/relay-ai.html">See how it works →</a></div><header class="nav"><div class="container nav__inner"><a class="logo" href="../index.html" aria-label="Relaydesk home"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="10" fill="currentColor"/><path d="M9 21.5c0-5 3.2-9 8-9h2.5M15.5 9l4 3.5-4 3.5" fill="none" stroke="#FFF9F3" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="22.5" cy="21.5" r="2.4" fill="#E26832"/></svg><span>Relaydesk</span></a><nav aria-label="Main"><ul class="nav__links"><li><a href="../product/index.html">Product</a></li><li><a href="../pricing.html">Pricing</a></li><li><a href="../integrations/index.html">Integrations</a></li><li><a href="../help/index.html">Help center</a></li><li><a href="../faq.html">FAQ</a></li><li><a href="../blog/index.html">Blog</a></li></ul></nav><div class="nav__cta"><a class="btn btn--white" href="../contact.html">Talk to sales</a><a class="btn" href="../pricing.html#trial">Start free trial</a></div></div></header><main id="main"><div class="article-wrap"><aside class="toc"><p>On this page</p><ol><li><a href="#uptime-commitment">Uptime commitment</a></li><li><a href="#how-uptime-is-measured">How uptime is measured</a></li><li><a href="#service-credits">Service credits</a></li><li><a href="#exclusions">Exclusions</a></li><li><a href="#how-to-claim-a-credit">How to claim a credit</a></li><li><a href="#during-an-incident">During an incident</a></li><li><a href="#changes-to-this-sla">Changes to this SLA</a></li></ol></aside><article><nav class="crumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a> <span aria-hidden="true">/</span> <a href="../legal/terms.html">Legal</a></nav><header class="article-head"><p class="t-eyebrow">Legal</p><h1 class="t-h1">Uptime SLA</h1><p class="t-lead">Our availability commitment for Growth and Scale workspaces, how we measure it, and the service credits you receive if we fall short.</p><p class="meta">Last updated March 1, 2026 · 4 min read</p></header><div class="prose">
+<p>This Uptime Service Level Agreement (“SLA”) forms part of the Relaydesk <a href="../legal/terms.html">Terms of Service</a>. It describes the availability Relaydesk, Inc. commits to for paid workspaces on the Growth and Scale plans, and the service credits you receive if we miss that commitment.</p>
+
+<h2 id="uptime-commitment">Uptime commitment</h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Plan</th><th>Monthly uptime commitment</th></tr></thead>
+<tbody>
+<tr><td>Starter</td><td>No SLA (best effort)</td></tr>
+<tr><td>Growth</td><td>99.9%</td></tr>
+<tr><td>Scale</td><td>99.95%</td></tr>
+</tbody>
+</table>
+</div>
+<p>The SLA covers the Relaydesk web app and agent apps, the Shared Inbox, Live Chat (including the website widget), Knowledge Base help centers, Relay AI and the public API. Free trials are not covered.</p>
+
+<h2 id="how-uptime-is-measured">How uptime is measured</h2>
+<p>Monthly uptime is the percentage of minutes in a calendar month (UTC) during which the Service is available, calculated as:</p>
+<p><code>Monthly uptime % = (total minutes in the month − minutes of downtime) ÷ total minutes in the month × 100</code></p>
+<p>A minute counts as downtime when our external monitoring shows that agents cannot sign in or load tickets, or that the API or Live Chat widget returns server errors for more than 5% of requests during that minute. Minutes excluded under “Exclusions” below are not counted as downtime.</p>
+<p>For example, a 30-day month has 43,200 minutes. The 99.9% Growth commitment allows about 43 minutes of downtime in that month; the 99.95% Scale commitment allows about 21 minutes. We publish live status and incident history at status.relaydesk.example.</p>
+
+<h2 id="service-credits">Service credits</h2>
+<p>If monthly uptime falls below your plan's commitment, you are eligible for a service credit calculated as a percentage of that month's fee for the affected workspace:</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Monthly uptime</th><th>Credit (Scale, 99.95% SLA)</th><th>Credit (Growth, 99.9% SLA)</th></tr></thead>
+<tbody>
+<tr><td>Below the SLA target but ≥ 99.0%</td><td>10%</td><td>10%</td></tr>
+<tr><td>&lt; 99.0% but ≥ 95.0%</td><td>25%</td><td>25%</td></tr>
+<tr><td>&lt; 95.0%</td><td>50%</td><td>50%</td></tr>
+</tbody>
+</table>
+</div>
+<p>Service credits are capped at 50% of the monthly fee for the affected month. For annual plans, the monthly fee is one twelfth of the annual subscription fee. Credits are calculated on seat fees only, not on usage-based charges such as extra AI resolutions or SMS.</p>
+<p>Credits are applied to your next invoice or renewal. They are not refundable as cash, cannot be transferred to another workspace, and are your sole and exclusive remedy for unavailability of the Service.</p>
+
+<h2 id="exclusions">Exclusions</h2>
+<p>Downtime does not include unavailability caused by:</p>
+<ul>
+<li><strong>Scheduled maintenance</strong> announced at least 72 hours in advance on status.relaydesk.example, held on Sundays between 02:00 and 06:00 UTC, and limited to a maximum of 4 hours per month. Maintenance beyond 4 hours in a month counts as downtime.</li>
+<li>Outages of third-party channels and networks outside our control, such as email providers, mobile carriers, WhatsApp, Facebook or Instagram, or your DNS settings for a custom sender or help center domain.</li>
+<li>Integrations provided by third parties, including Shopify, Slack, Salesforce and Zapier.</li>
+<li>Your own equipment, internet connection, browser extensions or code, including modifications to the Live Chat widget snippet.</li>
+<li>Suspension of your workspace under the Terms of Service, for example for non-payment or a breach of acceptable use.</li>
+<li>Requests that exceed your plan's API rate limits (600 requests per minute on Growth, 1,200 on Scale).</li>
+<li>Events beyond our reasonable control, such as natural disasters, acts of government or large-scale internet failures not caused by Relaydesk.</li>
+<li>Features labeled beta, preview or early access.</li>
+</ul>
+
+<h2 id="how-to-claim-a-credit">How to claim a credit</h2>
+<ol class="steps">
+<li>A workspace admin emails support@relaydesk.example with the subject line “SLA credit request” within 30 days of the end of the month in which the downtime occurred. Claims received later are not eligible.</li>
+<li>Include your workspace name, the dates and times (with time zone) of the downtime you experienced, and a short description of the impact, for example error messages or affected channels.</li>
+<li>We check your claim against our monitoring data and status page records and reply within 10 business days.</li>
+<li>If the claim is approved, the credit appears on your next invoice or renewal. If we decline it, we explain why and share the uptime figure we measured for that month.</li>
+</ol>
+<div class="callout"><strong>Tip:</strong> Subscribe to updates on status.relaydesk.example so you have a record of incidents and maintenance windows when you prepare a claim.</div>
+
+<h2 id="during-an-incident">During an incident</h2>
+<p>If you think Relaydesk is unavailable, check status.relaydesk.example first. If no incident is listed, contact support@relaydesk.example. Scale customers have 24/7 support with a first reply to urgent issues within 1 hour; Growth customers have chat and email support 24 hours a day, 5 days a week, with a first reply within 4 hours. We post updates on the status page throughout an incident, and for significant incidents we publish a short summary of the cause and the steps we are taking to prevent it from happening again. Reporting an incident to support does not count as an SLA claim; please still follow the claim process above.</p>
+
+<h2 id="changes-to-this-sla">Changes to this SLA</h2>
+<p>We may update this SLA with at least 30 days' notice to workspace admins. Changes will not reduce the uptime commitment or credit levels during an annual term that is already paid. Questions about this SLA can go to support@relaydesk.example, and plan details are on the <a href="../pricing.html">pricing page</a>.</p>
+</div></article></div></main><footer class="footer"><div class="container"><div class="footer__top"><p class="t-h1">Every conversation, <span class="accent">one calm inbox.</span></p><a class="btn btn--white" href="../pricing.html#trial">Start your 14-day free trial</a></div><div class="footer__cols"><div class="footer__about"><a class="logo" href="../index.html"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="10" fill="currentColor"/><path d="M9 21.5c0-5 3.2-9 8-9h2.5M15.5 9l4 3.5-4 3.5" fill="none" stroke="#FFF9F3" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="22.5" cy="21.5" r="2.4" fill="#E26832"/></svg><span>Relaydesk</span></a><p>Relaydesk, Inc. · 418 Alder Street, Suite 300, Portland, OR 97204, USA</p><p>EU office: Rua do Ouro 120, 1100-063 Lisbon, Portugal</p><p>Sales: +1 (503) 555-0142 · support@relaydesk.example</p></div><div><h2>Product</h2><ul><li><a href="../product/index.html">Platform overview</a></li><li><a href="../product/shared-inbox.html">Shared Inbox</a></li><li><a href="../product/live-chat.html">Live Chat</a></li><li><a href="../product/knowledge-base.html">Knowledge Base</a></li><li><a href="../product/relay-ai.html">Relay AI</a></li><li><a href="../pricing.html">Pricing</a></li></ul></div><div><h2>Integrations</h2><ul><li><a href="../integrations/index.html">All integrations</a></li><li><a href="../integrations/shopify.html">Shopify</a></li><li><a href="../integrations/slack.html">Slack</a></li><li><a href="../integrations/salesforce.html">Salesforce</a></li></ul></div><div><h2>Resources</h2><ul><li><a href="../help/index.html">Help center</a></li><li><a href="../help/getting-started.html">Getting started</a></li><li><a href="../help/admin-guide.html">Admin guide</a></li><li><a href="../faq.html">FAQ</a></li><li><a href="../blog/index.html">Blog</a></li></ul></div><div><h2>Company</h2><ul><li><a href="../about.html">About</a></li><li><a href="../contact.html">Contact</a></li><li><a href="../security.html">Security</a></li></ul></div><div><h2>Legal</h2><ul><li><a href="../legal/terms.html">Terms of Service</a></li><li><a href="../legal/privacy.html">Privacy Policy</a></li><li><a href="../legal/sla.html">Uptime SLA</a></li><li><a href="../legal/refund-policy.html">Refund Policy</a></li></ul></div></div><div class="footer__legal"><span>© 2026 Relaydesk, Inc. All rights reserved.</span><span>Relaydesk is a fictional company. This site is a test fixture for content-ingestion systems.</span></div></div></footer><div class="cookie" id="cookie" role="region" aria-label="Cookie notice"><p>We use essential cookies to keep you signed in and remember your preferences. We do not use advertising cookies. Read our <a href="../legal/privacy.html">Privacy Policy</a>.</p><button class="btn btn--filled" type="button" id="cookie-ok">Got it</button></div><script>(function(){var c=document.getElementById("cookie");try{if(localStorage.getItem("rd-cookie"))c.hidden=true;}catch(e){}document.getElementById("cookie-ok").onclick=function(){c.hidden=true;try{localStorage.setItem("rd-cookie","1");}catch(e){}};})();</script></body></html>

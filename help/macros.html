@@ -1,0 +1,61 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Use macros (saved replies) · Relaydesk</title><meta name="description" content="Create Relaydesk macros that insert a saved reply with placeholders and set tags, status, and assignee in one click."><link rel="stylesheet" href="../assets/tokens.css"><link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml"></head><body><div class="announce">New in 2026.10: Relay AI Autopilot now answers customers on WhatsApp. <a href="../product/relay-ai.html">See how it works →</a></div><header class="nav"><div class="container nav__inner"><a class="logo" href="../index.html" aria-label="Relaydesk home"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="10" fill="currentColor"/><path d="M9 21.5c0-5 3.2-9 8-9h2.5M15.5 9l4 3.5-4 3.5" fill="none" stroke="#FFF9F3" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="22.5" cy="21.5" r="2.4" fill="#E26832"/></svg><span>Relaydesk</span></a><nav aria-label="Main"><ul class="nav__links"><li><a href="../product/index.html">Product</a></li><li><a href="../pricing.html">Pricing</a></li><li><a href="../integrations/index.html">Integrations</a></li><li><a href="../help/index.html" aria-current="page">Help center</a></li><li><a href="../faq.html">FAQ</a></li><li><a href="../blog/index.html">Blog</a></li></ul></nav><div class="nav__cta"><a class="btn btn--white" href="../contact.html">Talk to sales</a><a class="btn" href="../pricing.html#trial">Start free trial</a></div></div></header><main id="main"><div class="article-wrap"><aside class="toc"><p>On this page</p><ol><li><a href="#what-a-macro-does">What a macro does</a></li><li><a href="#placeholders">Placeholders</a></li><li><a href="#personal-and-shared-macros">Personal and shared macros</a></li><li><a href="#create-a-macro">Create a macro</a></li><li><a href="#apply-a-macro">Apply a macro</a></li><li><a href="#macro-usage-reports">Macro usage reports</a></li></ol></aside><article><nav class="crumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a> <span aria-hidden="true">/</span> <a href="../help/index.html">Help center</a> <span aria-hidden="true">/</span> <a href="../help/index.html#workflows">Workflows</a></nav><header class="article-head"><p class="t-eyebrow">Help center · Workflows</p><h1 class="t-h1">Use macros (saved replies)</h1><p class="t-lead">Macros are saved replies that can also do the housekeeping for you: add a tag, change the status, hand the ticket to another team. One click replaces a paragraph of typing and three menu changes.</p><p class="meta">Last updated July 22, 2026 · 3 min read</p></header><div class="prose">
+<h2 id="what-a-macro-does">What a macro does</h2>
+<p>A macro has two optional parts: a <strong>reply</strong> and a set of <strong>actions</strong>. When you apply a macro, the reply text is inserted into the composer, where you can edit it before sending, and the actions are queued. They run when you send the reply, so if you change your mind and discard the draft, nothing on the ticket changes.</p>
+<p>Available actions:</p>
+<ul>
+<li><strong>Set tag</strong>: add or remove one or more tags, such as <em>refund-requested</em>.</li>
+<li><strong>Set status</strong>: Open, Pending, On-hold, or Solved.</li>
+<li><strong>Set assignee</strong>: a specific agent, a team, or "Unassign".</li>
+<li><strong>Set priority</strong>: Urgent, High, Normal, or Low. This also changes which SLA targets apply.</li>
+<li><strong>Add internal note</strong>: a note only your team sees, including @mentions.</li>
+</ul>
+<p>A macro with actions but no reply is useful too. For example, an "Escalate to billing" macro that tags the ticket, sets priority to High, and assigns the Billing team.</p>
+
+<h2 id="placeholders">Placeholders</h2>
+<p>Placeholders are replaced with real values when the macro is applied. Type them in double curly braces:</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Placeholder</th><th>Inserts</th></tr></thead>
+<tbody>
+<tr><td><code>{{customer.first_name}}</code></td><td>The customer's first name</td></tr>
+<tr><td><code>{{customer.email}}</code></td><td>The customer's email address</td></tr>
+<tr><td><code>{{ticket.id}}</code></td><td>The ticket number, for example 48213</td></tr>
+<tr><td><code>{{agent.first_name}}</code></td><td>The first name of the agent sending the reply</td></tr>
+<tr><td><code>{{order.number}}</code></td><td>Number of the customer's most recent Shopify order</td></tr>
+<tr><td><code>{{order.status}}</code></td><td>Status of that order, such as "Fulfilled" or "Awaiting shipment"</td></tr>
+<tr><td><code>{{order.tracking_url}}</code></td><td>The carrier tracking link for that order</td></tr>
+</tbody>
+</table>
+</div>
+<p>The <code>order.*</code> placeholders come from the <a href="../integrations/shopify.html">Shopify integration</a>, which is available on Growth and above. They use the same data as the order sidebar, which shows the customer's last 5 orders. If the customer has no matching order, the placeholder is left empty and the composer highlights it so you can fill it in by hand.</p>
+<p>To avoid an awkward blank, add a fallback: <code>{{customer.first_name | default: "there"}}</code> produces "Hi there" when the first name is unknown.</p>
+
+<div class="callout"><strong>Example:</strong> "Hi <code>{{customer.first_name}}</code>, your order <code>{{order.number}}</code> is currently <code>{{order.status}}</code>. You can follow it here: <code>{{order.tracking_url}}</code>. Your reference for this conversation is #<code>{{ticket.id}}</code>." with actions <em>Set tag: order-status</em> and <em>Set status: Solved</em>.</div>
+
+<h2 id="personal-and-shared-macros">Personal and shared macros</h2>
+<p><strong>Personal macros</strong> belong to the agent who creates them and are visible only to that agent. Any agent can create them, which makes them good for drafts and individual phrasing.</p>
+<p><strong>Shared macros</strong> are visible to the whole workspace or to the teams you choose. Admins can create and edit them, as can agents with the <em>Manage shared macros</em> permission. Use shared macros for anything with policy implications, such as refunds or account changes, so everyone gives the same answer. An agent can copy a shared macro into a personal one to adapt it without changing the original.</p>
+
+<h2 id="create-a-macro">Create a macro</h2>
+<ol class="steps">
+<li>Go to <strong>Settings → Workflows → Macros</strong> and click <strong>New macro</strong>. You can also click <strong>Save as macro</strong> under any reply you are writing.</li>
+<li>Give it a clear name, such as "Shipping: where is my order", and choose <strong>Personal</strong> or <strong>Shared</strong>. For shared macros, pick the teams that can use it.</li>
+<li>Write the reply and insert placeholders from the <strong>Insert placeholder</strong> menu.</li>
+<li>Add actions: tags, status, assignee, priority, or an internal note.</li>
+<li>Click <strong>Save</strong>. The macro is available immediately in the composer.</li>
+</ol>
+
+<h2 id="apply-a-macro">Apply a macro</h2>
+<p>In any ticket, click <strong>Macros</strong> in the composer toolbar or press <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>M</kbd> (<kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>M</kbd> on Mac) and start typing the macro name. Pending actions are listed above the Send button, and you can remove any of them before sending. Macros work the same in the iOS and Android agent apps.</p>
+<div class="callout callout--warn"><strong>Note:</strong> Light (collaborator) seats cannot reply to customers, so they can only apply macros that have no reply text, such as a macro that adds an internal note and a tag.</div>
+
+<h2 id="macro-usage-reports">Macro usage reports</h2>
+<p>Under <strong>Reporting → Macros</strong>, you can see how each macro is used across the workspace:</p>
+<ul>
+<li>Number of times applied, per day, week, or month.</li>
+<li>Which agents and teams use it most.</li>
+<li>Average CSAT on tickets where the macro was used, so you can spot replies that frustrate customers.</li>
+<li>Last used date. Macros not used in 90 days are flagged as candidates for cleanup.</li>
+</ul>
+<p>Personal macros appear in the report only for their owner and for admins. Review the report every quarter: macros with high usage and low CSAT are usually the best ones to rewrite, or to turn into a <a href="../product/knowledge-base.html">Knowledge Base</a> article that Relay AI can use too.</p>
+</div><div class="card help-box"><div><p class="t-h4">Still need help?</p><p>Our support team replies within 4 hours on Growth and within 1 hour for urgent issues on Scale.</p></div><a class="btn btn--sm" href="../contact.html">Contact support</a></div></article></div></main><footer class="footer"><div class="container"><div class="footer__top"><p class="t-h1">Every conversation, <span class="accent">one calm inbox.</span></p><a class="btn btn--white" href="../pricing.html#trial">Start your 14-day free trial</a></div><div class="footer__cols"><div class="footer__about"><a class="logo" href="../index.html"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="10" fill="currentColor"/><path d="M9 21.5c0-5 3.2-9 8-9h2.5M15.5 9l4 3.5-4 3.5" fill="none" stroke="#FFF9F3" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="22.5" cy="21.5" r="2.4" fill="#E26832"/></svg><span>Relaydesk</span></a><p>Relaydesk, Inc. · 418 Alder Street, Suite 300, Portland, OR 97204, USA</p><p>EU office: Rua do Ouro 120, 1100-063 Lisbon, Portugal</p><p>Sales: +1 (503) 555-0142 · support@relaydesk.example</p></div><div><h2>Product</h2><ul><li><a href="../product/index.html">Platform overview</a></li><li><a href="../product/shared-inbox.html">Shared Inbox</a></li><li><a href="../product/live-chat.html">Live Chat</a></li><li><a href="../product/knowledge-base.html">Knowledge Base</a></li><li><a href="../product/relay-ai.html">Relay AI</a></li><li><a href="../pricing.html">Pricing</a></li></ul></div><div><h2>Integrations</h2><ul><li><a href="../integrations/index.html">All integrations</a></li><li><a href="../integrations/shopify.html">Shopify</a></li><li><a href="../integrations/slack.html">Slack</a></li><li><a href="../integrations/salesforce.html">Salesforce</a></li></ul></div><div><h2>Resources</h2><ul><li><a href="../help/index.html">Help center</a></li><li><a href="../help/getting-started.html">Getting started</a></li><li><a href="../help/admin-guide.html">Admin guide</a></li><li><a href="../faq.html">FAQ</a></li><li><a href="../blog/index.html">Blog</a></li></ul></div><div><h2>Company</h2><ul><li><a href="../about.html">About</a></li><li><a href="../contact.html">Contact</a></li><li><a href="../security.html">Security</a></li></ul></div><div><h2>Legal</h2><ul><li><a href="../legal/terms.html">Terms of Service</a></li><li><a href="../legal/privacy.html">Privacy Policy</a></li><li><a href="../legal/sla.html">Uptime SLA</a></li><li><a href="../legal/refund-policy.html">Refund Policy</a></li></ul></div></div><div class="footer__legal"><span>© 2026 Relaydesk, Inc. All rights reserved.</span><span>Relaydesk is a fictional company. This site is a test fixture for content-ingestion systems.</span></div></div></footer><div class="cookie" id="cookie" role="region" aria-label="Cookie notice"><p>We use essential cookies to keep you signed in and remember your preferences. We do not use advertising cookies. Read our <a href="../legal/privacy.html">Privacy Policy</a>.</p><button class="btn btn--filled" type="button" id="cookie-ok">Got it</button></div><script>(function(){var c=document.getElementById("cookie");try{if(localStorage.getItem("rd-cookie"))c.hidden=true;}catch(e){}document.getElementById("cookie-ok").onclick=function(){c.hidden=true;try{localStorage.setItem("rd-cookie","1");}catch(e){}};})();</script></body></html>

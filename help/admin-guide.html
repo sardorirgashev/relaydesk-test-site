@@ -1,0 +1,329 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Complete workspace administration guide · Relaydesk</title><meta name="description" content="The full reference for Relaydesk workspace administrators: settings, roles, teams, channels, business hours, assignment, SLAs, automations, AI, security, billing and data."><link rel="stylesheet" href="../assets/tokens.css"><link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml"></head><body><div class="announce">New in 2026.10: Relay AI Autopilot now answers customers on WhatsApp. <a href="../product/relay-ai.html">See how it works →</a></div><header class="nav"><div class="container nav__inner"><a class="logo" href="../index.html" aria-label="Relaydesk home"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="10" fill="currentColor"/><path d="M9 21.5c0-5 3.2-9 8-9h2.5M15.5 9l4 3.5-4 3.5" fill="none" stroke="#FFF9F3" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="22.5" cy="21.5" r="2.4" fill="#E26832"/></svg><span>Relaydesk</span></a><nav aria-label="Main"><ul class="nav__links"><li><a href="../product/index.html">Product</a></li><li><a href="../pricing.html">Pricing</a></li><li><a href="../integrations/index.html">Integrations</a></li><li><a href="../help/index.html" aria-current="page">Help center</a></li><li><a href="../faq.html">FAQ</a></li><li><a href="../blog/index.html">Blog</a></li></ul></nav><div class="nav__cta"><a class="btn btn--white" href="../contact.html">Talk to sales</a><a class="btn" href="../pricing.html#trial">Start free trial</a></div></div></header><main id="main"><div class="article-wrap"><aside class="toc"><p>On this page</p><ol><li><a href="#1-workspace-settings">1. Workspace settings</a></li><li><a href="#2-roles-and-permissions">2. Roles and permissions</a></li><li><a href="#3-teams">3. Teams</a></li><li><a href="#4-channels">4. Channels</a></li><li><a href="#5-business-hours-and-holidays">5. Business hours and holidays</a></li><li><a href="#6-assignment">6. Assignment</a></li><li><a href="#7-sla-policies">7. SLA policies</a></li><li><a href="#8-automations-and-triggers">8. Automations and triggers</a></li><li><a href="#9-macros">9. Macros</a></li><li><a href="#10-tags-views-and-custom-fields">10. Tags, views and custom fields</a></li><li><a href="#11-knowledge-base">11. Knowledge Base</a></li><li><a href="#12-relay-ai">12. Relay AI</a></li><li><a href="#13-security">13. Security</a></li><li><a href="#14-billing-and-seats">14. Billing and seats</a></li><li><a href="#15-data-export-and-deletion">15. Data export and deletion</a></li><li><a href="#16-reporting-and-notifications">16. Reporting and notifications</a></li><li><a href="#17-admin-checklist">17. Admin checklist</a></li></ol></aside><article><nav class="crumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a> <span aria-hidden="true">/</span> <a href="../help/index.html">Help center</a> <span aria-hidden="true">/</span> <a href="../help/index.html#getting-started">Getting started</a></nav><header class="article-head"><p class="t-eyebrow">Help center · Getting started</p><h1 class="t-h1">Complete workspace administration guide</h1><p class="t-lead">Everything a Relaydesk Owner or Admin can configure, in one place. Read it end to end before a rollout, or jump to the section you need from the table of contents.</p><p class="meta">Last updated October 16, 2026 · 19 min read</p></header><div class="prose">
+<p>This guide covers every area of the <strong>Settings</strong> menu in Relaydesk. It is written for workspace Owners and Admins, and it assumes you have already created a workspace. If you haven't, start with <a href="../help/getting-started.html">Getting started: your first-week checklist</a> and come back here when you're ready to fine-tune.</p>
+<p>Where a setting depends on your plan, we say so. Plan limits in this guide match the <a href="../pricing.html">pricing page</a>: Starter, Growth and Scale.</p>
+
+<div class="callout"><strong>Tip:</strong> Almost every change in Settings is recorded in the audit log, including who made it and when. If something changes unexpectedly, check <strong>Settings → Security → Audit log</strong> first.</div>
+
+<h2 id="1-workspace-settings">1. Workspace settings</h2>
+<p>Workspace settings live under <strong>Settings → Workspace</strong>. Only Owners and Admins can open this page.</p>
+
+<h3>Name, handle and branding</h3>
+<p>The workspace name appears in emails to customers, in the chat widget header and in the Knowledge Base. The workspace handle is the short identifier used in your inbound email address, <code>support-&lt;workspace&gt;@inbound.relaydesk.example</code>. Changing the handle changes the forwarding address, so update your mail provider's forwarding rule at the same time or new email will stop arriving.</p>
+<p>Upload a square logo and choose an accent color. Both are used in the chat widget, customer-facing emails and the default Knowledge Base theme.</p>
+
+<h3>Time zone and language</h3>
+<p>The workspace time zone is the default for business hours schedules, reports and SLA timers. Each agent can still choose their own display time zone in their profile, but reports always use the workspace time zone so numbers line up across the team.</p>
+<p>The workspace language sets the default language for system emails, CSAT surveys and the chat widget. Customers see the widget in their browser's language if it's one of the 32 supported widget languages.</p>
+
+<h3>Ticket lifecycle</h3>
+<p>Every ticket moves through the statuses <strong>Open</strong>, <strong>Pending</strong>, <strong>On hold</strong>, <strong>Solved</strong> and <strong>Closed</strong>. Two rules control the end of that lifecycle:</p>
+<ul>
+  <li><strong>Auto-close.</strong> Solved tickets close automatically after <strong>4 days</strong> without a customer reply. You can set this to anything from 1 to 28 days.</li>
+  <li><strong>Reopening.</strong> A customer reply to a <em>solved</em> ticket reopens it. A reply to a <em>closed</em> ticket creates a new ticket that is linked to the original, so the history is never lost.</li>
+</ul>
+<div class="callout"><strong>Tip:</strong> If your customers often reply "thanks!" after you solve a ticket, a shorter auto-close window keeps those replies from reopening tickets that are really done. Most teams settle on 2 to 4 days.</div>
+
+<h3>Customer satisfaction (CSAT)</h3>
+<p>CSAT surveys use a 5-point scale. By default the survey is sent <strong>1 hour</strong> after a ticket is solved; you can set the delay anywhere from 0 to 72 hours, or turn surveys off for specific channels. Survey results appear in Reports and on each ticket. See <a href="../help/csat-surveys.html">CSAT surveys</a> for wording and timing advice.</p>
+
+<h2 id="2-roles-and-permissions">2. Roles and permissions</h2>
+<p>Relaydesk has four roles. Every person in the workspace has exactly one. Change a role from <strong>Settings → Team</strong> by opening the person's profile and choosing <strong>Change role</strong>.</p>
+
+<h3>Owner</h3>
+<p>The Owner is the person who created the workspace, or the person ownership was transferred to. A workspace has one Owner. The Owner can do everything an Admin can, plus three things only the Owner can do: transfer ownership, delete the workspace, and remove or demote Admins. The Owner occupies a paid agent seat.</p>
+
+<h3>Admin</h3>
+<p>Admins configure the workspace. They can manage channels, teams, business hours, assignment rules, SLA policies, automations, triggers, webhooks, macros, tags, custom fields, the Knowledge Base, Relay AI, security settings, billing and seats, and data exports. Admins also work tickets like any Agent. An Admin occupies a paid agent seat.</p>
+
+<h3>Agent</h3>
+<p>Agents work tickets. They reply to customers on every connected channel, add internal notes, @mention teammates, apply macros, set tags and custom fields, merge and split tickets, and write or edit Knowledge Base articles if an Admin has given them editor access. Agents can create personal macros and views but can't change workspace settings. An Agent occupies a paid agent seat.</p>
+
+<h3>Light seat</h3>
+<p>Light seats, also called collaborator seats, are <strong>free on all plans</strong>. A light seat can view tickets and add internal notes with @mentions, but <strong>cannot reply to customers</strong>. Light seats are ideal for engineers, finance, operations or warehouse staff who need to answer an agent's question without joining the queue. Starter allows up to <strong>50 light seats</strong>; Growth and Scale have no light seat limit.</p>
+
+<h3>Permissions at a glance</h3>
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr><th>Capability</th><th>Owner</th><th>Admin</th><th>Agent</th><th>Light seat</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>View tickets</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+    <tr><td>Add internal notes and @mentions</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+    <tr><td>Reply to customers</td><td>Yes</td><td>Yes</td><td>Yes</td><td>No</td></tr>
+    <tr><td>Apply macros, tags and custom fields</td><td>Yes</td><td>Yes</td><td>Yes</td><td>No</td></tr>
+    <tr><td>Create shared macros and views</td><td>Yes</td><td>Yes</td><td>No (personal only)</td><td>No</td></tr>
+    <tr><td>Configure channels, teams and assignment</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td></tr>
+    <tr><td>Manage SLA policies, automations and webhooks</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td></tr>
+    <tr><td>Configure Relay AI</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td></tr>
+    <tr><td>Security settings and audit log</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td></tr>
+    <tr><td>Billing, plan and seats</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td></tr>
+    <tr><td>Full workspace data export</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td></tr>
+    <tr><td>Transfer ownership or delete the workspace</td><td>Yes</td><td>No</td><td>No</td><td>No</td></tr>
+    <tr><td>Uses a paid seat</td><td>Yes</td><td>Yes</td><td>Yes</td><td>No (free)</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h3>Transferring ownership</h3>
+<p>To hand the workspace to someone else, the current Owner goes to <strong>Settings → Workspace → Ownership</strong>, picks an existing Admin and confirms with their password or security key. The previous Owner becomes an Admin. Ownership transfers are recorded in the audit log.</p>
+<div class="callout callout--warn"><strong>Important:</strong> Make sure at least two people in your workspace are Admins. If your only Owner leaves the company and no Admin exists, recovering the workspace requires identity verification with Relaydesk support and takes much longer.</div>
+
+<h2 id="3-teams">3. Teams</h2>
+<p>Teams group agents who handle the same kind of work, such as Billing, Technical support or Spanish-speaking customers. Create them under <strong>Settings → Teams</strong>.</p>
+
+<h3>Creating a team</h3>
+<ol class="steps">
+  <li>Click <strong>New team</strong> and give it a name customers will never see, for example "Tier 2 – Technical".</li>
+  <li>Add members. An agent can belong to more than one team.</li>
+  <li>Optionally attach a business hours schedule. Team SLA timers then follow that schedule instead of the workspace default.</li>
+  <li>Choose an assignment method for the team (see the Assignment section below).</li>
+</ol>
+
+<h3>Team views and reporting</h3>
+<p>Each team automatically gets a view showing its unassigned and open tickets. Reports can be filtered by team, so you can compare first reply time between, say, your Billing and Technical teams without building custom dashboards.</p>
+
+<h3>Light seats and teams</h3>
+<p>You can add light seats to a team so they can be @mentioned by team name. They still can't reply to customers, and tickets are never auto-assigned to them.</p>
+
+<h2 id="4-channels">4. Channels</h2>
+<p>Channels are the ways customers reach you. All of them feed the same Shared Inbox queue, so agents never need to switch tools. Manage channels under <strong>Settings → Channels</strong>.</p>
+
+<h3>Email</h3>
+<p>Forward your support mailbox to your workspace forwarding address and add SPF and DKIM records so replies are sent from your own domain. DMARC is recommended. Attachments can be up to <strong>25 MB per file</strong>. The number of email inboxes depends on your plan: 2 on Starter, 10 on Growth and unlimited on Scale. Full instructions are in <a href="../help/connect-email.html">Connect your support email</a>.</p>
+
+<h3>Live Chat</h3>
+<p>Live Chat is included on every plan. Install the widget snippet on your site, choose a pre-chat form and set offline behavior. Agents see a typing preview of what the customer is writing before they hit send. You can also send proactive messages, for example to visitors who have spent more than a minute on your pricing page. See <a href="../help/install-chat-widget.html">Install the chat widget</a>.</p>
+
+<h3>SMS and WhatsApp</h3>
+<p>SMS and WhatsApp are available on Growth and Scale. Connect a phone number from <strong>Settings → Channels → SMS</strong> or <strong>WhatsApp</strong>. SMS usage is billed separately and is never refunded.</p>
+
+<h3>Facebook and Instagram</h3>
+<p>Direct messages from your Facebook Page and Instagram business account arrive as tickets on Growth and Scale. Connect them by signing in with a Facebook account that is an admin of the Page.</p>
+
+<h3>Plan availability</h3>
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr><th>Channel</th><th>Starter</th><th>Growth</th><th>Scale</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Email inboxes</td><td>2</td><td>10</td><td>Unlimited</td></tr>
+    <tr><td>Live Chat</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+    <tr><td>SMS, WhatsApp, Facebook, Instagram</td><td>No</td><td>Yes</td><td>Yes</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2 id="5-business-hours-and-holidays">5. Business hours and holidays</h2>
+<p>Business hours tell Relaydesk when your team is working. They control SLA timers, the chat widget's online and offline states, and time-based automations. Manage them under <strong>Settings → Business hours</strong>.</p>
+
+<h3>Schedules</h3>
+<p>A schedule is a set of weekly opening hours in a time zone, for example Monday to Friday, 8:00 to 18:00 Pacific. You can create one schedule on Starter, up to five on Growth and an unlimited number on Scale. Teams with different hours, such as a European team and a North American team, each get their own schedule.</p>
+
+<h3>Holiday calendars</h3>
+<p>Each schedule has its own holiday calendar. Add public holidays and company closures as single dates or ranges. On a holiday the schedule is treated as closed all day: SLA timers pause, and the chat widget switches to offline mode.</p>
+<div class="callout"><strong>Tip:</strong> Add next year's holidays in December. Forgotten holidays are the most common reason for surprise SLA breaches in January.</div>
+
+<h3>How schedules interact with SLAs</h3>
+<p>If an SLA policy has a schedule attached, its targets are measured in business hours. A 4-hour first reply target on a ticket that arrives at 17:00 on a Friday, with hours ending at 18:00, is due at 11:00 on Monday. Without a schedule, targets run around the clock.</p>
+
+<h2 id="6-assignment">6. Assignment</h2>
+<p>Assignment rules decide which agent gets each new ticket. Configure them per team under <strong>Settings → Assignment</strong>. The <a href="../help/assignment-rules.html">assignment rules article</a> has worked examples.</p>
+
+<h3>Round-robin</h3>
+<p>Tickets are handed out to available agents in turn. It is simple and fair, and the best place to start if your tickets take roughly the same effort.</p>
+
+<h3>Load-balanced</h3>
+<p>Each new ticket goes to the available agent with the fewest open tickets. Use this when some tickets take much longer than others, so nobody gets buried.</p>
+
+<h3>Skills-based</h3>
+<p>Tag agents with skills such as "Spanish", "Shopify" or "API", and Relaydesk routes tickets that need a skill to agents who have it. Skills are matched from ticket tags, custom fields or the channel. If no agent with the skill is available, the ticket waits in the team's unassigned view.</p>
+
+<h3>Availability and collision detection</h3>
+<p>Agents set themselves to Online, Away or Offline. Only Online agents receive automatic assignments. When two agents open the same ticket, collision detection shows a notice such as "Ana is replying…" so you never send two answers to one customer.</p>
+
+<h2 id="7-sla-policies">7. SLA policies</h2>
+<p>SLA policies set the response targets you've promised customers. Manage them under <strong>Settings → SLA policies</strong>. Starter includes one SLA policy; Growth and Scale have unlimited policies. See <a href="../help/sla-policies.html">SLA policies</a> for detailed examples.</p>
+
+<h3>Targets</h3>
+<p>Each policy can set three targets:</p>
+<ul>
+  <li><strong>First reply time</strong>: time from ticket creation to the first public reply from an agent.</li>
+  <li><strong>Next reply time</strong>: time from a customer's follow-up message to the agent's next reply.</li>
+  <li><strong>Full resolution time</strong>: time from creation until the ticket is solved.</li>
+</ul>
+<p>If a business hours schedule is attached, targets are measured in business hours.</p>
+
+<h3>Conditions and priority order</h3>
+<p>Policies apply to tickets that match their conditions, for example priority is Urgent, or the customer has the tag <code>vip</code>. When a ticket matches several policies, the one highest in the list wins. Drag policies to reorder them.</p>
+
+<h3>Breach forecasts</h3>
+<p>Since the 2026.10 release, Relaydesk shows an SLA breach forecast on tickets that are likely to miss their target based on current queue length and agent availability. Forecasts appear in views and can be used as an automation condition, so you can, for example, escalate a ticket to a team lead before it breaches.</p>
+
+<h2 id="8-automations-and-triggers">8. Automations and triggers</h2>
+<p>Automations do repetitive work for you. Relaydesk has two kinds, both under <strong>Settings → Automations</strong>.</p>
+
+<h3>Triggers</h3>
+<p>Triggers run immediately when something happens to a ticket: it's created, updated, or receives a customer reply. A trigger has conditions (for example, the subject contains "invoice") and actions (for example, add the tag <code>billing</code> and assign to the Billing team). Triggers run in list order, and every trigger that matches runs.</p>
+
+<h3>Time-based automations</h3>
+<p>Time-based automations check tickets periodically and act on tickets that have been in a state for a certain time. Typical examples are sending a reminder to customers on tickets that have been Pending for 3 days, or raising priority on tickets that have been Open for 24 business hours.</p>
+
+<h3>Webhooks</h3>
+<p>Webhooks send ticket events to your own systems. A workspace can have up to <strong>20 webhooks</strong>. If your endpoint doesn't respond with a 2xx status, Relaydesk retries the delivery <strong>5 times with exponential backoff over about 1 hour</strong>. After the last retry the event is marked failed in the webhook's delivery log.</p>
+<div class="callout callout--warn"><strong>Watch out for loops:</strong> a trigger that updates a ticket can fire another trigger that updates it back. Give each trigger a condition that stops it from matching its own result, for example "tag is not <code>billing</code>" on a trigger that adds <code>billing</code>.</div>
+
+<h3>Integrations and API</h3>
+<p>Native integrations, including Slack, Shopify and Salesforce, are configured under <strong>Settings → Integrations</strong>. API access depends on your plan: read-only with 120 requests per minute on Starter, 600 requests per minute on Growth and 1,200 requests per minute on Scale. See the <a href="../integrations/index.html">integrations overview</a>.</p>
+
+<h2 id="9-macros">9. Macros</h2>
+<p>Macros are saved replies that can also perform actions. A single macro can insert a reply, set status, add tags, set custom fields and assign the ticket. Manage shared macros under <strong>Settings → Macros</strong>; agents can create personal macros from the ticket view.</p>
+
+<h3>Shared and personal macros</h3>
+<p>Shared macros are created by Admins and available to everyone, or only to selected teams. Personal macros are visible only to the agent who created them. Review personal macros periodically; the good ones are worth promoting to shared.</p>
+
+<h3>Variables</h3>
+<p>Macros support variables such as the customer's first name, the ticket number and the assigned agent's name. If the Shopify integration is connected, order-status variables such as the latest order number and tracking link are also available. See <a href="../help/macros.html">Create and use macros</a> for the full variable list.</p>
+
+<h3>Keeping macros healthy</h3>
+<p>Macro usage is shown in Reports. Archive macros nobody has used in three months, and assign an owner to each shared macro so someone is responsible for keeping it accurate when policies change.</p>
+
+<h2 id="10-tags-views-and-custom-fields">10. Tags, views and custom fields</h2>
+<p>Tags, views and custom fields are how you organize the inbox and get useful reports out of it.</p>
+
+<h3>Tags</h3>
+<p>Tags are free-form labels such as <code>refund</code>, <code>bug</code> or <code>vip</code>. Agents add them by hand, and triggers and macros add them automatically. Admins can restrict tag creation to Admins only under <strong>Settings → Tags</strong> to stop near-duplicates like <code>refund</code>, <code>refunds</code> and <code>refund-request</code> from piling up.</p>
+
+<h3>Custom fields</h3>
+<p>Custom fields capture structured data on tickets, such as product line, order number or contact reason. Supported field types are text, number, dropdown, checkbox and date. A field can be required before a ticket is solved, which is the most reliable way to get clean contact-reason reporting.</p>
+
+<h3>Views</h3>
+<p>Views are saved filters of the inbox, such as "Unassigned urgent" or "Waiting on engineering". Admins create shared views; agents can create personal views. Views can be sorted by SLA due time so the most urgent tickets are always on top.</p>
+
+<h2 id="11-knowledge-base">11. Knowledge Base</h2>
+<p>The Knowledge Base is your public help center. It also powers Relay AI Autopilot, which answers customers using your published articles. Manage it from the <strong>Knowledge Base</strong> section of the main menu, and its settings under <strong>Settings → Knowledge Base</strong>. Read more on the <a href="../product/knowledge-base.html">Knowledge Base product page</a>.</p>
+
+<h3>How many Knowledge Bases you can have</h3>
+<p>Starter includes one Knowledge Base, Growth three and Scale unlimited. Separate Knowledge Bases are useful for different brands or for keeping partner documentation apart from customer help.</p>
+
+<h3>Custom domain</h3>
+<p>Each Knowledge Base can be served on your own domain, for example help.northwind.example. Add the CNAME record shown in Settings to your DNS, and Relaydesk issues the TLS certificate automatically.</p>
+
+<h3>Articles, versions and translations</h3>
+<ul>
+  <li><strong>Versioning.</strong> Every published change is saved as a version. You can compare versions and restore an earlier one.</li>
+  <li><strong>Internal-only articles.</strong> Mark an article internal and it's visible to your team and to Copilot, but never published to customers.</li>
+  <li><strong>Translations.</strong> Articles can be translated into 18 languages. Each translation is versioned separately.</li>
+</ul>
+
+<h3>Search analytics and feedback</h3>
+<p>The Knowledge Base report shows what customers search for, including "searches with no results", which is the best to-do list for new articles. Readers can rate each article with thumbs up or thumbs down, and low-rated articles are flagged for review.</p>
+
+<h2 id="12-relay-ai">12. Relay AI</h2>
+<p>Relay AI is Relaydesk's AI assistant. Configure it under <strong>Settings → Relay AI</strong>. Full setup steps are in <a href="../help/relay-ai-setup.html">Set up Relay AI</a>, and an overview is on the <a href="../product/relay-ai.html">Relay AI product page</a>.</p>
+
+<h3>Copilot</h3>
+<p>Copilot drafts replies for agents and summarizes long threads. Agents always review and send the reply themselves. Copilot is available on Growth and Scale.</p>
+
+<h3>Autopilot</h3>
+<p>Autopilot answers customers directly on chat and email, and, since the 2026.10 release, on WhatsApp. It uses your published Knowledge Base articles as its source. Autopilot hands off to a human agent when its confidence is low or when the customer asks for a person.</p>
+<p>An <strong>AI resolution</strong> is a conversation that Autopilot closes with no human reply in the following 72 hours. Growth includes 500 AI resolutions per month and Scale includes 2,000. Additional resolutions cost $0.60 each. Extra AI resolutions are never refunded.</p>
+
+<h3>Data use</h3>
+<p>Relay AI is never trained on customer data across workspaces. Your tickets and articles are used only to answer questions in your own workspace.</p>
+<div class="callout"><strong>Tip:</strong> Start Autopilot on chat only, during business hours, so agents can watch handoffs in real time. Expand to email and after-hours once you're happy with the answers.</div>
+
+<h2 id="13-security">13. Security</h2>
+<p>Security settings are under <strong>Settings → Security</strong>. For details of how Relaydesk protects your data, see the <a href="../security.html">security page</a>.</p>
+
+<h3>Passwords</h3>
+<p>Passwords must be at least 12 characters. Password reset links expire after 60 minutes and can only be used once. Admins can force a password reset for any member. See <a href="../help/reset-password.html">Reset your password</a>.</p>
+
+<h3>Two-factor authentication</h3>
+<p>Relaydesk supports TOTP authenticator apps and hardware security keys (WebAuthn). Admins can require 2FA for everyone in the workspace from <strong>Settings → Security → Two-factor authentication</strong>. See <a href="../help/two-factor-authentication.html">Set up two-factor authentication</a>.</p>
+
+<h3>Single sign-on and SCIM</h3>
+<p>On the Scale plan, you can connect a SAML 2.0 identity provider for single sign-on and use SCIM to create, update and deactivate members automatically. When SSO is enforced, members sign in through your identity provider and can't use a Relaydesk password; password resets and 2FA are handled by the identity provider.</p>
+
+<h3>Session timeout</h3>
+<p>Sessions time out after <strong>14 days</strong> of inactivity by default. Admins can set the idle timeout anywhere from 1 to 30 days. Shorter timeouts are recommended for teams that use shared or public computers.</p>
+
+<h3>Audit log</h3>
+<p>The audit log records sign-ins, role changes, settings changes, exports and deletions. Retention depends on your plan: <strong>30 days</strong> on Starter, <strong>90 days</strong> on Growth and <strong>1 year</strong> on Scale. You can export the audit log to keep records longer.</p>
+<div class="callout callout--warn"><strong>Security reports:</strong> if you believe you've found a vulnerability in Relaydesk, email security@relaydesk.example. We run a bug bounty program through that address.</div>
+
+<h2 id="14-billing-and-seats">14. Billing and seats</h2>
+<p>Owners and Admins manage the plan, seats and payment method under <strong>Settings → Billing</strong>. Invoices and receipts are covered in <a href="../help/billing-and-invoices.html">Billing and invoices</a>.</p>
+
+<h3>Plans and prices</h3>
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr><th>Plan</th><th>Monthly billing (per agent seat)</th><th>Annual billing (per agent seat, per month)</th><th>Max agent seats</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Starter</td><td>$19</td><td>$15</td><td>10</td></tr>
+    <tr><td>Growth</td><td>$49</td><td>$39</td><td>Unlimited</td></tr>
+    <tr><td>Scale</td><td>$89</td><td>$71</td><td>Unlimited</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Annual billing saves about 20%. Prices exclude tax. Light seats are free on every plan. Nonprofits and education organizations get 40% off Growth and Scale on annual billing.</p>
+
+<h3>Adding and removing seats</h3>
+<p>Seats added mid-cycle are prorated, so you pay only for the rest of the current period. Seats you remove take effect at your next renewal; until then the seat stays available and you can reassign it to someone else.</p>
+
+<h3>Changing plans</h3>
+<p>Upgrades take effect immediately. Downgrading takes effect at the end of the current billing period. Before downgrading, check plan limits: for example, Starter allows 2 email inboxes, 1 Knowledge Base, 1 SLA policy and 1 business hours schedule.</p>
+
+<h3>Payment methods and refunds</h3>
+<p>All plans can pay by card (Visa, Mastercard or American Express). Invoice, ACH and wire transfer are available on annual Scale plans only. For refunds, monthly plans can get a full refund of the first paid charge within 30 days; annual plans can get a full refund within 30 days of purchase or renewal. Request a refund from <strong>Billing → Request refund</strong>. The full rules are in the <a href="../legal/refund-policy.html">refund policy</a>.</p>
+
+<h2 id="15-data-export-and-deletion">15. Data export and deletion</h2>
+<p>You own your data. Admins can export it at any time and delete the workspace when you're done.</p>
+
+<h3>Exporting data</h3>
+<p>Go to <strong>Settings → Data → Export</strong> to generate a full workspace export in <strong>CSV</strong> or <strong>JSON</strong>. You'll get an email when it's ready. The download link stays available for <strong>7 days</strong> after the export is generated; after that, generate a new one. See <a href="../help/export-data.html">Export your data</a>.</p>
+
+<h3>Backups</h3>
+<p>Relaydesk backs up workspace data every 6 hours and keeps backups for 35 days. Backups are for disaster recovery and can't be used to restore individual tickets on request.</p>
+
+<h3>Deleting the workspace</h3>
+<p>Only the Owner can delete a workspace, from <strong>Settings → Workspace → Delete workspace</strong>. When a workspace is deleted, its data is purged within <strong>30 days</strong>, and backups age out within <strong>35 days</strong> after that.</p>
+<div class="callout callout--warn"><strong>This cannot be undone.</strong> Export everything you need before deleting the workspace. After deletion, Relaydesk support cannot recover tickets, contacts or articles.</div>
+
+<h2 id="16-reporting-and-notifications">16. Reporting and notifications</h2>
+<p>Reporting is built into every Relaydesk product rather than sold separately. Admins decide who sees which dashboards and how the team is told about new work.</p>
+
+<h3>Dashboards</h3>
+<p>The <strong>Reports</strong> section includes ready-made dashboards for ticket volume by channel, first reply time, full resolution time, SLA attainment, CSAT, macro usage, Knowledge Base search and Relay AI. Every dashboard can be filtered by team, channel, tag and date range, and uses the workspace time zone. Agents see reports for their own work and their teams; Admins see everything.</p>
+<p>A good weekly habit is to look at three numbers together: first reply time, SLA attainment and CSAT. If first reply time rises while CSAT holds steady, you probably have a staffing gap rather than a quality problem. If CSAT drops on one channel only, review that channel's macros and Autopilot answers first.</p>
+
+<h3>Exporting report data</h3>
+<p>Each dashboard can be downloaded as CSV for use in a spreadsheet. For larger analysis, use the API or a full workspace export described in section 15 above.</p>
+
+<h3>Notifications</h3>
+<p>Each agent controls their own desktop, email and mobile push notifications from <strong>Profile → Notifications</strong>, for example "notify me when a ticket is assigned to me" or "when I'm @mentioned in a note". Admins can set workspace defaults that apply to new members.</p>
+<p>For team-wide alerts, connect Slack or Microsoft Teams. The Slack integration, available on all plans, posts new-ticket notifications to channels, lets agents reply to tickets from Slack threads and adds a <code>/relay</code> slash command for creating tickets. See the <a href="../integrations/slack.html">Slack integration</a>.</p>
+
+<h3>Agent mobile apps</h3>
+<p>Agents can work tickets from the Relaydesk agent apps for iOS and Android, including replies, internal notes, macros and assignment. The apps follow the same roles and permissions as the web app, and the workspace session timeout applies to them too. Since the 2026.10 release, the agent app also supports dark mode.</p>
+
+<h2 id="17-admin-checklist">17. Admin checklist</h2>
+<p>Use this list when you take over an existing workspace or before a quarterly review:</p>
+<ul class="checklist">
+  <li>At least two Admins, and the Owner's contact details are current.</li>
+  <li>2FA required for everyone, or SSO enforced on Scale.</li>
+  <li>Session timeout matches your security policy.</li>
+  <li>Every email inbox shows SPF and DKIM as verified.</li>
+  <li>Holiday calendars include the next 12 months.</li>
+  <li>SLA policies match what your contracts promise.</li>
+  <li>No triggers or webhooks are failing in their logs.</li>
+  <li>Unused macros archived, and each shared macro has an owner.</li>
+  <li>Knowledge Base "searches with no results" reviewed.</li>
+  <li>Relay AI handoff rate and AI resolution usage checked against your plan allowance.</li>
+  <li>Seats match the people who actually answer customers; everyone else is a free light seat.</li>
+</ul>
+<p>Questions this guide doesn't answer? Email support@relaydesk.example or check the <a href="../faq.html">FAQ</a>.</p>
+</div><div class="card help-box"><div><p class="t-h4">Still need help?</p><p>Our support team replies within 4 hours on Growth and within 1 hour for urgent issues on Scale.</p></div><a class="btn btn--sm" href="../contact.html">Contact support</a></div></article></div></main><footer class="footer"><div class="container"><div class="footer__top"><p class="t-h1">Every conversation, <span class="accent">one calm inbox.</span></p><a class="btn btn--white" href="../pricing.html#trial">Start your 14-day free trial</a></div><div class="footer__cols"><div class="footer__about"><a class="logo" href="../index.html"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="10" fill="currentColor"/><path d="M9 21.5c0-5 3.2-9 8-9h2.5M15.5 9l4 3.5-4 3.5" fill="none" stroke="#FFF9F3" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="22.5" cy="21.5" r="2.4" fill="#E26832"/></svg><span>Relaydesk</span></a><p>Relaydesk, Inc. · 418 Alder Street, Suite 300, Portland, OR 97204, USA</p><p>EU office: Rua do Ouro 120, 1100-063 Lisbon, Portugal</p><p>Sales: +1 (503) 555-0142 · support@relaydesk.example</p></div><div><h2>Product</h2><ul><li><a href="../product/index.html">Platform overview</a></li><li><a href="../product/shared-inbox.html">Shared Inbox</a></li><li><a href="../product/live-chat.html">Live Chat</a></li><li><a href="../product/knowledge-base.html">Knowledge Base</a></li><li><a href="../product/relay-ai.html">Relay AI</a></li><li><a href="../pricing.html">Pricing</a></li></ul></div><div><h2>Integrations</h2><ul><li><a href="../integrations/index.html">All integrations</a></li><li><a href="../integrations/shopify.html">Shopify</a></li><li><a href="../integrations/slack.html">Slack</a></li><li><a href="../integrations/salesforce.html">Salesforce</a></li></ul></div><div><h2>Resources</h2><ul><li><a href="../help/index.html">Help center</a></li><li><a href="../help/getting-started.html">Getting started</a></li><li><a href="../help/admin-guide.html">Admin guide</a></li><li><a href="../faq.html">FAQ</a></li><li><a href="../blog/index.html">Blog</a></li></ul></div><div><h2>Company</h2><ul><li><a href="../about.html">About</a></li><li><a href="../contact.html">Contact</a></li><li><a href="../security.html">Security</a></li></ul></div><div><h2>Legal</h2><ul><li><a href="../legal/terms.html">Terms of Service</a></li><li><a href="../legal/privacy.html">Privacy Policy</a></li><li><a href="../legal/sla.html">Uptime SLA</a></li><li><a href="../legal/refund-policy.html">Refund Policy</a></li></ul></div></div><div class="footer__legal"><span>© 2026 Relaydesk, Inc. All rights reserved.</span><span>Relaydesk is a fictional company. This site is a test fixture for content-ingestion systems.</span></div></div></footer><div class="cookie" id="cookie" role="region" aria-label="Cookie notice"><p>We use essential cookies to keep you signed in and remember your preferences. We do not use advertising cookies. Read our <a href="../legal/privacy.html">Privacy Policy</a>.</p><button class="btn btn--filled" type="button" id="cookie-ok">Got it</button></div><script>(function(){var c=document.getElementById("cookie");try{if(localStorage.getItem("rd-cookie"))c.hidden=true;}catch(e){}document.getElementById("cookie-ok").onclick=function(){c.hidden=true;try{localStorage.setItem("rd-cookie","1");}catch(e){}};})();</script></body></html>

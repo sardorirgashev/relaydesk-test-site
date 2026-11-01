@@ -1,0 +1,72 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Install the chat widget · Relaydesk</title><meta name="description" content="Add the Relaydesk Live Chat widget to your website, WordPress, Shopify or Webflow store, configure the pre-chat form and offline mode, and verify signed-in users."><link rel="stylesheet" href="../assets/tokens.css"><link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml"></head><body><div class="announce">New in 2026.10: Relay AI Autopilot now answers customers on WhatsApp. <a href="../product/relay-ai.html">See how it works →</a></div><header class="nav"><div class="container nav__inner"><a class="logo" href="../index.html" aria-label="Relaydesk home"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="10" fill="currentColor"/><path d="M9 21.5c0-5 3.2-9 8-9h2.5M15.5 9l4 3.5-4 3.5" fill="none" stroke="#FFF9F3" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="22.5" cy="21.5" r="2.4" fill="#E26832"/></svg><span>Relaydesk</span></a><nav aria-label="Main"><ul class="nav__links"><li><a href="../product/index.html">Product</a></li><li><a href="../pricing.html">Pricing</a></li><li><a href="../integrations/index.html">Integrations</a></li><li><a href="../help/index.html" aria-current="page">Help center</a></li><li><a href="../faq.html">FAQ</a></li><li><a href="../blog/index.html">Blog</a></li></ul></nav><div class="nav__cta"><a class="btn btn--white" href="../contact.html">Talk to sales</a><a class="btn" href="../pricing.html#trial">Start free trial</a></div></div></header><main id="main"><div class="article-wrap"><aside class="toc"><p>On this page</p><ol><li><a href="#copy-the-snippet">Copy the snippet</a></li><li><a href="#platform-notes">Platform notes</a></li><li><a href="#pre-chat-form">Pre-chat form</a></li><li><a href="#offline-mode">Offline mode</a></li><li><a href="#languages-and-appearance">Languages and appearance</a></li><li><a href="#identity-verification">Identity verification</a></li><li><a href="#mobile-sdks">Mobile SDKs</a></li><li><a href="#troubleshooting">Troubleshooting</a></li><li><a href="#related-articles">Related articles</a></li></ol></aside><article><nav class="crumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a> <span aria-hidden="true">/</span> <a href="../help/index.html">Help center</a> <span aria-hidden="true">/</span> <a href="../help/index.html#channels">Channels</a></nav><header class="article-head"><p class="t-eyebrow">Help center · Channels</p><h1 class="t-h1">Install the chat widget</h1><p class="t-lead">Paste one snippet into your site and customers can chat with your team. The widget is about 38 KB gzipped and loads asynchronously, so it won&#x27;t slow your pages down.</p><p class="meta">Last updated September 9, 2026 · 4 min read</p></header><div class="prose">
+<p>Live Chat is included on every Relaydesk plan. You'll need to be an Owner or Admin to copy the snippet and change widget settings, and you'll need access to edit your website's HTML or theme.</p>
+
+<h2 id="copy-the-snippet">Copy the snippet</h2>
+<p>Go to <strong>Settings → Channels → Live Chat → Install</strong>. Your snippet already contains your workspace handle. It looks like this:</p>
+<pre><code>&lt;script&gt;
+  window.RelaydeskSettings = { workspace: "northwind" };
+&lt;/script&gt;
+&lt;script async src="https://widget.relaydesk.example/v1/loader.js"&gt;&lt;/script&gt;</code></pre>
+<p>Paste it just before the closing <code>&lt;/body&gt;</code> tag on every page where you want the widget. Because the script uses <code>async</code>, the browser keeps rendering your page while the widget downloads. The whole widget is about <strong>38 KB gzipped</strong>.</p>
+<div class="callout"><strong>Tip:</strong> Install the snippet on your site but leave the widget switched to <strong>Hidden</strong> under <strong>Appearance</strong> until your team is ready. You can preview it by adding <code>?relaydesk_preview=1</code> to any page URL.</div>
+
+<h2 id="platform-notes">Platform notes</h2>
+<h3>WordPress</h3>
+<p>Use a header and footer code plugin, or your theme's built-in custom code setting, and paste the snippet into the <strong>footer</strong> section. Avoid editing your theme's <code>footer.php</code> directly, because theme updates overwrite it. If you use a caching or optimization plugin, exclude <code>widget.relaydesk.example</code> from JavaScript combining and delay settings.</p>
+
+<h3>Shopify</h3>
+<p>In your Shopify admin go to <strong>Online Store → Themes</strong>, click <strong>⋯ → Edit code</strong>, open <code>theme.liquid</code> and paste the snippet just before <code>&lt;/body&gt;</code>. If you're on Growth or Scale, install the Relaydesk app from the Shopify App Store as well: it adds the order sidebar to tickets and lets agents refund, cancel or edit addresses without leaving Relaydesk. See the <a href="../integrations/shopify.html">Shopify integration</a>.</p>
+
+<h3>Webflow</h3>
+<p>Open <strong>Site settings → Custom code</strong> and paste the snippet into <strong>Footer code</strong>, then publish your site. Custom code requires a paid Webflow site plan. To show the widget only on some pages, paste it into each page's own custom code settings instead.</p>
+
+<h2 id="pre-chat-form">Pre-chat form</h2>
+<p>A pre-chat form asks visitors a few questions before the chat starts, so agents have context and the chat can be routed to the right team. Configure it under <strong>Live Chat → Pre-chat form</strong>.</p>
+<ul>
+  <li>Choose which fields to show: name, email and any ticket custom fields, such as order number or topic.</li>
+  <li>Mark fields required or optional. Asking for email is recommended, so you can follow up if the visitor leaves.</li>
+  <li>Use a dropdown field together with <a href="../help/assignment-rules.html">assignment rules</a> to route chats to a team, for example Billing or Technical.</li>
+</ul>
+<p>Skip the form for visitors you've already identified with identity verification; Relaydesk knows who they are.</p>
+
+<h2 id="offline-mode">Offline mode</h2>
+<p>When nobody on the team is available, or outside the business hours schedule attached to the widget, the widget switches to <strong>offline mode</strong>. Visitors leave their email address and message, and the chat becomes an <strong>email ticket</strong> in the Shared Inbox. The customer gets your reply by email.</p>
+<p>If Relay AI Autopilot is turned on for chat, it can answer from your Knowledge Base while you're offline and create a ticket only when it needs to hand off to a human. See <a href="../help/relay-ai-setup.html">Set up Relay AI</a>.</p>
+
+<h2 id="languages-and-appearance">Languages and appearance</h2>
+<p>The widget is available in <strong>32 languages</strong>. It uses the visitor's browser language when it's supported and falls back to your workspace language otherwise. You can also force a language in the snippet, for example <code>language: "pt"</code>.</p>
+<p>Under <strong>Appearance</strong>, set the accent color, launcher position, greeting and agent avatars. Turn on <strong>Email transcript</strong> to send customers a copy of the conversation automatically when the chat ends. Visitors and agents can share files up to <strong>25 MB</strong> each.</p>
+
+<h2 id="identity-verification">Identity verification</h2>
+<p>If your website has signed-in customers, pass their details to the widget so agents see who they're talking to and the customer's chat history follows them across devices. Turn on <strong>identity verification</strong> so nobody can impersonate another customer by editing the snippet in their browser.</p>
+<ol class="steps">
+  <li>Go to <strong>Live Chat → Security</strong> and copy your identity verification secret. Keep it on your server only; never put it in front-end code.</li>
+  <li>On your server, compute an <strong>HMAC-SHA256</strong> of the signed-in user's ID using the secret, and output it as a hex string.</li>
+  <li>Add the user details and the hash to the snippet settings:</li>
+</ol>
+<pre><code>&lt;script&gt;
+  window.RelaydeskSettings = {
+    workspace: "northwind",
+    user: {
+      id: "cus_48213",
+      email: "dana@whitfieldstudio.example",
+      name: "Dana Whitfield",
+      userHash: "HMAC-SHA256 hex digest of the id"
+    }
+  };
+&lt;/script&gt;</code></pre>
+<p>Once identity verification is turned on, Relaydesk rejects user details that arrive without a valid hash and starts the chat as an anonymous visitor instead. If you rotate the secret, update your server before you save the new one, or signed-in customers will briefly appear as anonymous.</p>
+
+<h2 id="mobile-sdks">Mobile SDKs</h2>
+<p>To offer chat inside your own app, use the Relaydesk Live Chat SDKs for <strong>iOS</strong> and <strong>Android</strong>. They use the same settings, pre-chat form, languages and identity verification as the website widget, and support push notifications for agent replies. Find the SDK keys under <strong>Live Chat → Mobile SDKs</strong>. These SDKs are for your customers; your agents use the separate Relaydesk agent apps for iOS and Android.</p>
+
+<h2 id="troubleshooting">Troubleshooting</h2>
+<details><summary>The widget doesn't appear</summary><p>Check that the widget isn't set to Hidden, that the snippet is on the page (view the page source and search for <code>widget.relaydesk.example</code>), and that a content security policy on your site allows scripts and connections to <code>widget.relaydesk.example</code>.</p></details>
+<details><summary>The widget is always offline</summary><p>Check the business hours schedule attached to the widget, including its holiday calendar, and make sure at least one agent on the receiving team is set to Available.</p></details>
+
+<h2 id="related-articles">Related articles</h2>
+<ul>
+  <li><a href="../help/connect-email.html">Connect your support email</a></li>
+  <li><a href="../product/live-chat.html">Live Chat overview</a></li>
+</ul>
+</div><div class="card help-box"><div><p class="t-h4">Still need help?</p><p>Our support team replies within 4 hours on Growth and within 1 hour for urgent issues on Scale.</p></div><a class="btn btn--sm" href="../contact.html">Contact support</a></div></article></div></main><footer class="footer"><div class="container"><div class="footer__top"><p class="t-h1">Every conversation, <span class="accent">one calm inbox.</span></p><a class="btn btn--white" href="../pricing.html#trial">Start your 14-day free trial</a></div><div class="footer__cols"><div class="footer__about"><a class="logo" href="../index.html"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="10" fill="currentColor"/><path d="M9 21.5c0-5 3.2-9 8-9h2.5M15.5 9l4 3.5-4 3.5" fill="none" stroke="#FFF9F3" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="22.5" cy="21.5" r="2.4" fill="#E26832"/></svg><span>Relaydesk</span></a><p>Relaydesk, Inc. · 418 Alder Street, Suite 300, Portland, OR 97204, USA</p><p>EU office: Rua do Ouro 120, 1100-063 Lisbon, Portugal</p><p>Sales: +1 (503) 555-0142 · support@relaydesk.example</p></div><div><h2>Product</h2><ul><li><a href="../product/index.html">Platform overview</a></li><li><a href="../product/shared-inbox.html">Shared Inbox</a></li><li><a href="../product/live-chat.html">Live Chat</a></li><li><a href="../product/knowledge-base.html">Knowledge Base</a></li><li><a href="../product/relay-ai.html">Relay AI</a></li><li><a href="../pricing.html">Pricing</a></li></ul></div><div><h2>Integrations</h2><ul><li><a href="../integrations/index.html">All integrations</a></li><li><a href="../integrations/shopify.html">Shopify</a></li><li><a href="../integrations/slack.html">Slack</a></li><li><a href="../integrations/salesforce.html">Salesforce</a></li></ul></div><div><h2>Resources</h2><ul><li><a href="../help/index.html">Help center</a></li><li><a href="../help/getting-started.html">Getting started</a></li><li><a href="../help/admin-guide.html">Admin guide</a></li><li><a href="../faq.html">FAQ</a></li><li><a href="../blog/index.html">Blog</a></li></ul></div><div><h2>Company</h2><ul><li><a href="../about.html">About</a></li><li><a href="../contact.html">Contact</a></li><li><a href="../security.html">Security</a></li></ul></div><div><h2>Legal</h2><ul><li><a href="../legal/terms.html">Terms of Service</a></li><li><a href="../legal/privacy.html">Privacy Policy</a></li><li><a href="../legal/sla.html">Uptime SLA</a></li><li><a href="../legal/refund-policy.html">Refund Policy</a></li></ul></div></div><div class="footer__legal"><span>© 2026 Relaydesk, Inc. All rights reserved.</span><span>Relaydesk is a fictional company. This site is a test fixture for content-ingestion systems.</span></div></div></footer><div class="cookie" id="cookie" role="region" aria-label="Cookie notice"><p>We use essential cookies to keep you signed in and remember your preferences. We do not use advertising cookies. Read our <a href="../legal/privacy.html">Privacy Policy</a>.</p><button class="btn btn--filled" type="button" id="cookie-ok">Got it</button></div><script>(function(){var c=document.getElementById("cookie");try{if(localStorage.getItem("rd-cookie"))c.hidden=true;}catch(e){}document.getElementById("cookie-ok").onclick=function(){c.hidden=true;try{localStorage.setItem("rd-cookie","1");}catch(e){}};})();</script></body></html>

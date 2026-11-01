@@ -1,0 +1,67 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Set up Relay AI · Relaydesk</title><meta name="description" content="Turn on Relay AI Copilot and Autopilot, choose Knowledge Base sources, set handoff rules and tone, and understand AI resolution billing."><link rel="stylesheet" href="../assets/tokens.css"><link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml"></head><body><div class="announce">New in 2026.10: Relay AI Autopilot now answers customers on WhatsApp. <a href="../product/relay-ai.html">See how it works →</a></div><header class="nav"><div class="container nav__inner"><a class="logo" href="../index.html" aria-label="Relaydesk home"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="10" fill="currentColor"/><path d="M9 21.5c0-5 3.2-9 8-9h2.5M15.5 9l4 3.5-4 3.5" fill="none" stroke="#FFF9F3" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="22.5" cy="21.5" r="2.4" fill="#E26832"/></svg><span>Relaydesk</span></a><nav aria-label="Main"><ul class="nav__links"><li><a href="../product/index.html">Product</a></li><li><a href="../pricing.html">Pricing</a></li><li><a href="../integrations/index.html">Integrations</a></li><li><a href="../help/index.html" aria-current="page">Help center</a></li><li><a href="../faq.html">FAQ</a></li><li><a href="../blog/index.html">Blog</a></li></ul></nav><div class="nav__cta"><a class="btn btn--white" href="../contact.html">Talk to sales</a><a class="btn" href="../pricing.html#trial">Start free trial</a></div></div></header><main id="main"><div class="article-wrap"><aside class="toc"><p>On this page</p><ol><li><a href="#copilot-and-autopilot">Copilot and Autopilot</a></li><li><a href="#turn-on-relay-ai">Turn on Relay AI</a></li><li><a href="#choose-knowledge-base-sources">Choose Knowledge Base sources</a></li><li><a href="#handoff-rules">Handoff rules</a></li><li><a href="#tone-settings">Tone settings</a></li><li><a href="#what-counts-as-an-ai-resolution">What counts as an AI resolution</a></li><li><a href="#included-resolutions-and-overage">Included resolutions and overage</a></li><li><a href="#usage-alerts">Usage alerts</a></li><li><a href="#your-data">Your data</a></li></ol></aside><article><nav class="crumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a> <span aria-hidden="true">/</span> <a href="../help/index.html">Help center</a> <span aria-hidden="true">/</span> <a href="../help/index.html#relay-ai">Relay AI</a></nav><header class="article-head"><p class="t-eyebrow">Help center · Relay AI</p><h1 class="t-h1">Set up Relay AI</h1><p class="t-lead">Relay AI is the AI assistant built into Relaydesk. This guide walks admins through turning on Copilot and Autopilot, choosing what Relay AI is allowed to read, deciding when it must hand off to a person, and keeping an eye on usage.</p><p class="meta">Last updated October 15, 2026 · 4 min read</p></header><div class="prose">
+<h2 id="copilot-and-autopilot">Copilot and Autopilot</h2>
+<p>Relay AI has two modes, and you can use either one or both.</p>
+<ul>
+<li><strong>Copilot</strong> works for your agents. It drafts replies in the composer and summarizes long threads in the ticket sidebar. An agent always reviews and sends the reply, so nothing reaches a customer without a person.</li>
+<li><strong>Autopilot</strong> works for your customers. It answers directly on Live Chat and email, and on WhatsApp since release 2026.10, using the Knowledge Base articles you choose. When it cannot help, it hands the conversation to a human.</li>
+</ul>
+<p>Relay AI is available on Growth and Scale. Starter does not include Copilot or Autopilot. The 14-day free trial includes Growth features and 50 AI resolutions, so you can test Autopilot before you buy. For an overview, see the <a href="../product/relay-ai.html">Relay AI product page</a>.</p>
+
+<h2 id="turn-on-relay-ai">Turn on Relay AI</h2>
+<ol class="steps">
+<li>As an admin, go to <strong>Settings → Relay AI</strong>.</li>
+<li>Switch on <strong>Copilot</strong>. Drafts and summaries appear for every agent right away.</li>
+<li>To use Autopilot, choose your Knowledge Base sources (see below), then pick the channels and inboxes where Autopilot may answer.</li>
+<li>Review the handoff rules and tone settings.</li>
+<li>Click <strong>Test Autopilot</strong> to ask it sample questions in a private preview, then switch <strong>Autopilot</strong> on.</li>
+</ol>
+<div class="callout"><strong>Tip:</strong> Start Autopilot on a single chat widget or inbox. Watch the first week of conversations in the <strong>Autopilot</strong> view before expanding to more channels.</div>
+
+<h2 id="choose-knowledge-base-sources">Choose Knowledge Base sources</h2>
+<p>Autopilot only answers from the sources you select. Pick one or more Knowledge Bases, then narrow them to specific collections if needed. Your plan sets the number of Knowledge Bases: 1 on Starter, 3 on Growth, and unlimited on Scale.</p>
+<ul>
+<li><strong>Public articles</strong> can be used by both Copilot and Autopilot.</li>
+<li><strong>Internal-only articles</strong> can be used by Copilot to draft replies for agents, but are never quoted to customers by Autopilot.</li>
+</ul>
+<p>Each Autopilot answer links to the articles it used, and agents can see those sources on the ticket. If customers ask something with no good article, the conversation is handed off, and the question appears in your Knowledge Base search analytics under "searches with no results". That list is the best place to find your next article to write.</p>
+
+<h2 id="handoff-rules">Handoff rules</h2>
+<p>Autopilot hands a conversation to a human in three situations:</p>
+<ol>
+<li><strong>Low confidence.</strong> If Autopilot is not confident its answer is supported by your sources, it does not guess. Set the threshold to <em>Cautious</em>, <em>Balanced</em> (default), or <em>Assertive</em>.</li>
+<li><strong>The customer asks for a human.</strong> Phrases like "talk to a person" or "agent please" always trigger a handoff, in any language.</li>
+<li><strong>Sensitive topics.</strong> Billing disputes, legal threats, account cancellation, and complaints about harassment or safety are handed off by default. Add your own topics or keywords to the list.</li>
+</ol>
+<p>On handoff, Autopilot tells the customer a teammate will follow up, adds an internal note summarizing the conversation, and sends the ticket through your normal <a href="../help/assignment-rules.html">assignment rules</a>. SLA timers start from the moment of handoff.</p>
+
+<h2 id="tone-settings">Tone settings</h2>
+<p>Choose a tone of <em>Friendly</em>, <em>Neutral</em>, or <em>Formal</em>, and add custom instructions of up to 500 characters, for example "Call customers by their first name. Never promise delivery dates." Autopilot replies in the customer's language. Copilot uses the same tone for its drafts, and agents can ask it to make a draft shorter, friendlier, or more formal.</p>
+
+<h2 id="what-counts-as-an-ai-resolution">What counts as an AI resolution</h2>
+<p>An <strong>AI resolution</strong> is a conversation that Autopilot closes with no human reply in the following <strong>72 hours</strong>. Only AI resolutions count toward your usage.</p>
+<ul>
+<li>A conversation Autopilot hands off is not an AI resolution.</li>
+<li>If a customer comes back within 72 hours and an agent replies, the conversation is no longer counted.</li>
+<li>Copilot drafts and summaries are never counted.</li>
+</ul>
+
+<h2 id="included-resolutions-and-overage">Included resolutions and overage</h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Plan</th><th>Copilot</th><th>Autopilot resolutions included / month</th><th>Extra AI resolution</th></tr></thead>
+<tbody>
+<tr><td>Starter</td><td>No</td><td>0</td><td>n/a</td></tr>
+<tr><td>Growth</td><td>Yes</td><td>500</td><td>$0.60</td></tr>
+<tr><td>Scale</td><td>Yes</td><td>2,000</td><td>$0.60</td></tr>
+</tbody>
+</table>
+</div>
+<p>Included resolutions reset at the start of each month and do not roll over. For example, a Growth workspace with 650 AI resolutions in a month pays for 150 extra: 150 × $0.60 = $90.</p>
+
+<h2 id="usage-alerts">Usage alerts</h2>
+<p>Relaydesk emails workspace admins when the workspace reaches <strong>80%</strong> and <strong>100%</strong> of its included monthly resolutions. The current count is always visible under <strong>Settings → Relay AI → Usage</strong>. Under <strong>When included resolutions run out</strong>, choose to keep Autopilot running at $0.60 per extra resolution, or to pause Autopilot until next month. Paused Autopilot hands every new conversation to your team, and Copilot keeps working.</p>
+<div class="callout callout--warn"><strong>Note:</strong> Extra AI resolutions are never refunded. See <a href="../help/billing-and-invoices.html">Billing and invoices</a>.</div>
+
+<h2 id="your-data">Your data</h2>
+<p>Relay AI is <strong>never trained on customer data across workspaces</strong>. Your tickets and articles are used only to answer within your own workspace. More detail is on our <a href="../security.html">security page</a>.</p>
+</div><div class="card help-box"><div><p class="t-h4">Still need help?</p><p>Our support team replies within 4 hours on Growth and within 1 hour for urgent issues on Scale.</p></div><a class="btn btn--sm" href="../contact.html">Contact support</a></div></article></div></main><footer class="footer"><div class="container"><div class="footer__top"><p class="t-h1">Every conversation, <span class="accent">one calm inbox.</span></p><a class="btn btn--white" href="../pricing.html#trial">Start your 14-day free trial</a></div><div class="footer__cols"><div class="footer__about"><a class="logo" href="../index.html"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="10" fill="currentColor"/><path d="M9 21.5c0-5 3.2-9 8-9h2.5M15.5 9l4 3.5-4 3.5" fill="none" stroke="#FFF9F3" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="22.5" cy="21.5" r="2.4" fill="#E26832"/></svg><span>Relaydesk</span></a><p>Relaydesk, Inc. · 418 Alder Street, Suite 300, Portland, OR 97204, USA</p><p>EU office: Rua do Ouro 120, 1100-063 Lisbon, Portugal</p><p>Sales: +1 (503) 555-0142 · support@relaydesk.example</p></div><div><h2>Product</h2><ul><li><a href="../product/index.html">Platform overview</a></li><li><a href="../product/shared-inbox.html">Shared Inbox</a></li><li><a href="../product/live-chat.html">Live Chat</a></li><li><a href="../product/knowledge-base.html">Knowledge Base</a></li><li><a href="../product/relay-ai.html">Relay AI</a></li><li><a href="../pricing.html">Pricing</a></li></ul></div><div><h2>Integrations</h2><ul><li><a href="../integrations/index.html">All integrations</a></li><li><a href="../integrations/shopify.html">Shopify</a></li><li><a href="../integrations/slack.html">Slack</a></li><li><a href="../integrations/salesforce.html">Salesforce</a></li></ul></div><div><h2>Resources</h2><ul><li><a href="../help/index.html">Help center</a></li><li><a href="../help/getting-started.html">Getting started</a></li><li><a href="../help/admin-guide.html">Admin guide</a></li><li><a href="../faq.html">FAQ</a></li><li><a href="../blog/index.html">Blog</a></li></ul></div><div><h2>Company</h2><ul><li><a href="../about.html">About</a></li><li><a href="../contact.html">Contact</a></li><li><a href="../security.html">Security</a></li></ul></div><div><h2>Legal</h2><ul><li><a href="../legal/terms.html">Terms of Service</a></li><li><a href="../legal/privacy.html">Privacy Policy</a></li><li><a href="../legal/sla.html">Uptime SLA</a></li><li><a href="../legal/refund-policy.html">Refund Policy</a></li></ul></div></div><div class="footer__legal"><span>© 2026 Relaydesk, Inc. All rights reserved.</span><span>Relaydesk is a fictional company. This site is a test fixture for content-ingestion systems.</span></div></div></footer><div class="cookie" id="cookie" role="region" aria-label="Cookie notice"><p>We use essential cookies to keep you signed in and remember your preferences. We do not use advertising cookies. Read our <a href="../legal/privacy.html">Privacy Policy</a>.</p><button class="btn btn--filled" type="button" id="cookie-ok">Got it</button></div><script>(function(){var c=document.getElementById("cookie");try{if(localStorage.getItem("rd-cookie"))c.hidden=true;}catch(e){}document.getElementById("cookie-ok").onclick=function(){c.hidden=true;try{localStorage.setItem("rd-cookie","1");}catch(e){}};})();</script></body></html>

@@ -1,0 +1,58 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Export your data · Relaydesk</title><meta name="description" content="Export your full Relaydesk workspace as CSV or JSON, use the API for ongoing exports, and understand what happens when you delete a workspace."><link rel="stylesheet" href="../assets/tokens.css"><link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml"></head><body><div class="announce">New in 2026.10: Relay AI Autopilot now answers customers on WhatsApp. <a href="../product/relay-ai.html">See how it works →</a></div><header class="nav"><div class="container nav__inner"><a class="logo" href="../index.html" aria-label="Relaydesk home"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="10" fill="currentColor"/><path d="M9 21.5c0-5 3.2-9 8-9h2.5M15.5 9l4 3.5-4 3.5" fill="none" stroke="#FFF9F3" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="22.5" cy="21.5" r="2.4" fill="#E26832"/></svg><span>Relaydesk</span></a><nav aria-label="Main"><ul class="nav__links"><li><a href="../product/index.html">Product</a></li><li><a href="../pricing.html">Pricing</a></li><li><a href="../integrations/index.html">Integrations</a></li><li><a href="../help/index.html" aria-current="page">Help center</a></li><li><a href="../faq.html">FAQ</a></li><li><a href="../blog/index.html">Blog</a></li></ul></nav><div class="nav__cta"><a class="btn btn--white" href="../contact.html">Talk to sales</a><a class="btn" href="../pricing.html#trial">Start free trial</a></div></div></header><main id="main"><div class="article-wrap"><aside class="toc"><p>On this page</p><ol><li><a href="#what-a-full-export-includes">What a full export includes</a></li><li><a href="#csv-or-json">CSV or JSON</a></li><li><a href="#generate-an-export">Generate an export</a></li><li><a href="#use-the-api-instead">Use the API instead</a></li><li><a href="#deleting-a-workspace">Deleting a workspace</a></li></ol></aside><article><nav class="crumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a> <span aria-hidden="true">/</span> <a href="../help/index.html">Help center</a> <span aria-hidden="true">/</span> <a href="../help/index.html#account-security">Account &amp; security</a></nav><header class="article-head"><p class="t-eyebrow">Help center · Account &amp; security</p><h1 class="t-h1">Export your data</h1><p class="t-lead">Your support history belongs to you. Admins can download a complete copy of a workspace at any time, as CSV or JSON, or pull data continuously through the API. This article also explains exactly what happens to your data if you delete a workspace.</p><p class="meta">Last updated August 27, 2026 · 3 min read</p></header><div class="prose">
+<h2 id="what-a-full-export-includes">What a full export includes</h2>
+<p>A full workspace export is a ZIP archive containing one file per data type. It includes:</p>
+<ul>
+<li><strong>Tickets</strong> with status, priority, tags, assignee, channel, and timestamps.</li>
+<li><strong>Messages and internal notes</strong> for every ticket, including chat transcripts.</li>
+<li><strong>Contacts and organizations</strong>, including custom fields.</li>
+<li><strong>Attachments</strong> as links, plus an index file listing each attachment's ticket and file name. Attachment links in the export work for the same 7 days as the export itself.</li>
+<li><strong>Knowledge Base articles</strong>, including internal-only articles and every saved version.</li>
+<li><strong>Macros, tags, views, assignment rules, and SLA policies.</strong></li>
+<li><strong>CSAT responses</strong> and follow-up comments.</li>
+<li><strong>SLA events</strong>, including warnings and breaches per ticket.</li>
+</ul>
+<p>The audit log is not part of the workspace export. Export it separately from <strong>Settings → Security → Audit log</strong>. Audit log retention depends on your plan: 30 days on Starter, 90 days on Growth, and 1 year on Scale.</p>
+
+<h2 id="csv-or-json">CSV or JSON</h2>
+<p>Choose the format when you start the export.</p>
+<ul>
+<li><strong>CSV</strong> opens in any spreadsheet app. Each data type is a separate file, and messages reference their ticket by ID.</li>
+<li><strong>JSON</strong> keeps the nested structure, with each ticket and its messages in one object. Choose JSON if you are migrating to another system or loading data into a warehouse.</li>
+</ul>
+
+<h2 id="generate-an-export">Generate an export</h2>
+<ol class="steps">
+<li>Sign in as an admin and go to <strong>Settings → Account → Data export</strong>.</li>
+<li>Choose <strong>CSV</strong> or <strong>JSON</strong>.</li>
+<li>Optionally limit the export to a date range. Leave it empty for the full workspace history.</li>
+<li>Click <strong>Generate export</strong>. Exports run in the background. Small workspaces finish in minutes, and large ones can take a few hours.</li>
+<li>When it is ready, every admin gets an email, and a <strong>Download</strong> button appears on the Data export page.</li>
+</ol>
+<div class="callout callout--warn"><strong>Important:</strong> The download link is available for <strong>7 days</strong> after the export is generated. After that it expires and you need to generate a new export. Each download is recorded in the audit log.</div>
+<p>Only admins can generate or download exports, and only one export can run at a time per workspace. Exports contain your customers' personal data, so store the file somewhere access-controlled and delete local copies you no longer need.</p>
+
+<h2 id="use-the-api-instead">Use the API instead</h2>
+<p>For ongoing or partial exports, such as a nightly sync to a data warehouse, use the REST API. API access is available on every plan, with rate limits by plan:</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Plan</th><th>API access</th><th>Rate limit</th></tr></thead>
+<tbody>
+<tr><td>Starter</td><td>Read-only</td><td>120 requests per minute</td></tr>
+<tr><td>Growth</td><td>Read and write</td><td>600 requests per minute</td></tr>
+<tr><td>Scale</td><td>Read and write</td><td>1,200 requests per minute</td></tr>
+</tbody>
+</table>
+</div>
+<p>Read-only access on Starter is enough for exporting data. When you go over the limit, the API responds with HTTP 429 and a <code>Retry-After</code> header telling you how many seconds to wait. Use incremental endpoints that return records changed since a timestamp, rather than re-reading the whole workspace each time. Create API tokens under <strong>Settings → Developers → API tokens</strong>. Treat a token like a password and never paste one into a ticket or chat.</p>
+<p>If you only need new ticket events in real time, webhooks may be simpler. You can configure up to 20 webhooks per workspace, and failed deliveries are retried 5 times with exponential backoff over about an hour.</p>
+
+<h2 id="deleting-a-workspace">Deleting a workspace</h2>
+<p>When you close your account, the workspace owner can delete the workspace under <strong>Settings → Account → Delete workspace</strong>. Before you do, generate and download a full export. Once deletion starts, exports are no longer available.</p>
+<ul>
+<li>Workspace data, including tickets, contacts, articles, and attachments, is <strong>purged within 30 days</strong> of deletion.</li>
+<li>Relaydesk takes backups every 6 hours and keeps each one for 35 days. Backups containing your data <strong>age out within 35 days after the purge</strong>. They are encrypted with AES-256 and are not restored except for disaster recovery.</li>
+<li>Deletion cannot be undone. Your public help center and chat widget stop working immediately.</li>
+</ul>
+<div class="callout"><strong>Tip:</strong> If you only want to stop paying, you can downgrade instead of deleting. Downgrades take effect at the end of the current billing period. See <a href="../help/billing-and-invoices.html">Billing and invoices</a>.</div>
+<p>For a copy of the personal data Relaydesk holds about you as an individual user, or for other data protection requests, see our <a href="../legal/privacy.html">privacy policy</a> or email privacy@relaydesk.example. More on encryption, hosting, and backups is on the <a href="../security.html">security page</a>.</p>
+</div><div class="card help-box"><div><p class="t-h4">Still need help?</p><p>Our support team replies within 4 hours on Growth and within 1 hour for urgent issues on Scale.</p></div><a class="btn btn--sm" href="../contact.html">Contact support</a></div></article></div></main><footer class="footer"><div class="container"><div class="footer__top"><p class="t-h1">Every conversation, <span class="accent">one calm inbox.</span></p><a class="btn btn--white" href="../pricing.html#trial">Start your 14-day free trial</a></div><div class="footer__cols"><div class="footer__about"><a class="logo" href="../index.html"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="10" fill="currentColor"/><path d="M9 21.5c0-5 3.2-9 8-9h2.5M15.5 9l4 3.5-4 3.5" fill="none" stroke="#FFF9F3" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="22.5" cy="21.5" r="2.4" fill="#E26832"/></svg><span>Relaydesk</span></a><p>Relaydesk, Inc. · 418 Alder Street, Suite 300, Portland, OR 97204, USA</p><p>EU office: Rua do Ouro 120, 1100-063 Lisbon, Portugal</p><p>Sales: +1 (503) 555-0142 · support@relaydesk.example</p></div><div><h2>Product</h2><ul><li><a href="../product/index.html">Platform overview</a></li><li><a href="../product/shared-inbox.html">Shared Inbox</a></li><li><a href="../product/live-chat.html">Live Chat</a></li><li><a href="../product/knowledge-base.html">Knowledge Base</a></li><li><a href="../product/relay-ai.html">Relay AI</a></li><li><a href="../pricing.html">Pricing</a></li></ul></div><div><h2>Integrations</h2><ul><li><a href="../integrations/index.html">All integrations</a></li><li><a href="../integrations/shopify.html">Shopify</a></li><li><a href="../integrations/slack.html">Slack</a></li><li><a href="../integrations/salesforce.html">Salesforce</a></li></ul></div><div><h2>Resources</h2><ul><li><a href="../help/index.html">Help center</a></li><li><a href="../help/getting-started.html">Getting started</a></li><li><a href="../help/admin-guide.html">Admin guide</a></li><li><a href="../faq.html">FAQ</a></li><li><a href="../blog/index.html">Blog</a></li></ul></div><div><h2>Company</h2><ul><li><a href="../about.html">About</a></li><li><a href="../contact.html">Contact</a></li><li><a href="../security.html">Security</a></li></ul></div><div><h2>Legal</h2><ul><li><a href="../legal/terms.html">Terms of Service</a></li><li><a href="../legal/privacy.html">Privacy Policy</a></li><li><a href="../legal/sla.html">Uptime SLA</a></li><li><a href="../legal/refund-policy.html">Refund Policy</a></li></ul></div></div><div class="footer__legal"><span>© 2026 Relaydesk, Inc. All rights reserved.</span><span>Relaydesk is a fictional company. This site is a test fixture for content-ingestion systems.</span></div></div></footer><div class="cookie" id="cookie" role="region" aria-label="Cookie notice"><p>We use essential cookies to keep you signed in and remember your preferences. We do not use advertising cookies. Read our <a href="../legal/privacy.html">Privacy Policy</a>.</p><button class="btn btn--filled" type="button" id="cookie-ok">Got it</button></div><script>(function(){var c=document.getElementById("cookie");try{if(localStorage.getItem("rd-cookie"))c.hidden=true;}catch(e){}document.getElementById("cookie-ok").onclick=function(){c.hidden=true;try{localStorage.setItem("rd-cookie","1");}catch(e){}};})();</script></body></html>
